@@ -1,0 +1,8 @@
+module Style
+singleton ColorPalette 1.0 ColorPalette.qml
+singleton Typography 1.0 Typography.qml
+singleton Spacing 1.0 Spacing.qml
+singleton Elevation 1.0 Elevation.qml
+singleton Radius 1.0 Radius.qml
+singleton Animations 1.0 Animations.qml
+singleton Theme 1.0 Theme.qml
