@@ -1,0 +1,157 @@
+<!-- Maquettes/comparateur-inventaires.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Comparateur d'inventaires</text>
+  <text x="64" y="136" font-family="Ubuntu" font-size="16" fill="#5E5E5E">Comparez deux inventaires pour identifier les différences</text>
+  
+  <!-- Sélecteurs d'inventaires -->
+  <rect x="64" y="160" width="1072" height="80" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Premier inventaire -->
+  <text x="96" y="184" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Premier inventaire</text>
+  <rect x="96" y="192" width="420" height="36" rx="4" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+  <text x="116" y="216" font-family="Ubuntu" font-size="14" fill="#202020">Configuration de travail (9 mars 2025)</text>
+  <path d="M496 204 L504 212 L496 220" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  
+  <!-- Deuxième inventaire -->
+  <text x="684" y="184" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Deuxième inventaire</text>
+  <rect x="684" y="192" width="420" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+  <text x="704" y="216" font-family="Ubuntu" font-size="14" fill="#202020">Configuration de gaming (15 février 2025)</text>
+  <path d="M1084 204 L1092 212 L1084 220" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  
+  <!-- Icône de comparaison -->
+  <circle cx="600" cy="210" r="24" fill="#F5F5F7"/>
+  <path d="M590 204 L610 216 M610 204 L590 216" stroke="#772953" stroke-width="2"/>
+  
+  <!-- Options de visualisation -->
+  <rect x="64" y="256" width="1072" height="48" rx="6" fill="#F5F5F7"/>
+  
+  <!-- Option de filtre -->
+  <rect x="80" y="264" width="220" height="32" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="104" y="284" font-family="Ubuntu" font-size="13" fill="#202020">Catégorie: Toutes</text>
+  <path d="M284 274 L292 282 L284 290" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  
+  <!-- Options d'affichage -->
+  <g transform="translate(316, 280)">
+    <text font-family="Ubuntu" font-size="13" fill="#5E5E5E">Afficher:</text>
+  </g>
+  
+  <rect x="380" y="264" width="160" height="32" rx="16" fill="#772953"/>
+  <text x="460" y="284" font-family="Ubuntu" font-size="13" fill="#FFFFFF" text-anchor="middle">Différences</text>
+  
+  <rect x="548" y="264" width="120" height="32" rx="16" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="608" y="284" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">Tout</text>
+  
+  <!-- Statistiques de comparaison -->
+  <rect x="844" y="264" width="276" height="32" rx="4" fill="#FFFFFF"/>
+  <text x="982" y="285" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">43 éléments identiques • 27 différences</text>
+  
+  <!-- Contenu principal -->
+  <rect x="64" y="320" width="1072" height="400" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Navigation par catégories -->
+  <rect x="64" y="320" width="1072" height="48" rx="6 6 0 0" fill="#F5F5F7"/>
+  
+  <!-- Onglets -->
+  <rect x="64" y="320" width="140" height="48" fill="#FFFFFF"/>
+  <text x="134" y="348" font-family="Ubuntu" font-size="14" font-weight="500" fill="#772953" text-anchor="middle">Applications</text>
+  <rect x="84" y="368" width="100" height="2" rx="1" fill="#772953"/>
+  
+  <text x="254" y="348" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Extensions</text>
+  <text x="374" y="348" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Apparence</text>
+  <text x="494" y="348" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Raccourcis</text>
+  <text x="614" y="348" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Configurations</text>
+  
+  <!-- Badge de différences -->
+  <circle cx="290" cy="336" r="8" fill="#D64541"/>
+  <text x="290" y="340" font-family="Ubuntu" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle">7</text>
+  
+  <!-- Tableau de comparaison des applications -->
+  <g transform="translate(80, 384)">
+    <!-- En-têtes -->
+    <rect width="1040" height="40" rx="0" fill="#F5F5F7"/>
+    <text x="8" y="25" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Application</text>
+    <text x="400" y="25" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Configuration de travail</text>
+    <text x="760" y="25" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Configuration de gaming</text>
+    
+    <!-- Ligne 1 - Différence -->
+    <g transform="translate(0, 40)">
+      <rect width="1040" height="48" rx="0" fill="#FFFFFF"/>
+      <rect width="1040" height="48" rx="0" fill="#D64541" opacity="0.05"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Firefox</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Présent (v122.0.1)</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Absent</text>
+    </g>
+    
+    <!-- Ligne 2 - Identique -->
+    <g transform="translate(0, 88)">
+      <rect width="1040" height="48" rx="0" fill="#F5F5F7"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" fill="#202020">LibreOffice</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Présent (v7.5.9)</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Présent (v7.5.9)</text>
+    </g>
+    
+    <!-- Ligne 3 - Différence -->
+    <g transform="translate(0, 136)">
+      <rect width="1040" height="48" rx="0" fill="#FFFFFF"/>
+      <rect width="1040" height="48" rx="0" fill="#D64541" opacity="0.05"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Visual Studio Code</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Présent (v1.87.2)</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Absent</text>
+    </g>
+    
+    <!-- Ligne 4 - Différence -->
+    <g transform="translate(0, 184)">
+      <rect width="1040" height="48" rx="0" fill="#F5F5F7"/>
+      <rect width="1040" height="48" rx="0" fill="#D64541" opacity="0.05"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Steam</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Absent</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Présent (v2.0)</text>
+    </g>
+    
+    <!-- Ligne 5 - Identique -->
+    <g transform="translate(0, 232)">
+      <rect width="1040" height="48" rx="0" fill="#FFFFFF"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" fill="#202020">GIMP</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Présent (v2.10.34)</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Présent (v2.10.34)</text>
+    </g>
+    
+    <!-- Ligne 6 - Différence -->
+    <g transform="translate(0, 280)">
+      <rect width="1040" height="48" rx="0" fill="#F5F5F7"/>
+      <rect width="1040" height="48" rx="0" fill="#D64541" opacity="0.05"/>
+      <text x="8" y="28" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Lutris</text>
+      <text x="400" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Absent</text>
+      <text x="760" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Présent (v0.5.12)</text>
+    </g>
+  </g>
+  
+  <!-- Action de fusion -->
+  <rect x="64" y="736" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="164" y="762" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Fusionner</text>
+  
+  <!-- Action d'application -->
+  <rect x="280" y="736" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="380" y="762" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Appliquer les différences</text>
+  
+  <!-- Action d'exportation -->
+  <rect x="496" y="736" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="596" y="762" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Exporter le rapport</text>
+</svg>

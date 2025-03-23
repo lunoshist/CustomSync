@@ -1,0 +1,109 @@
+<!-- Maquettes/gestionnaire-conflits.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Résolution de conflit</text>
+  <text x="64" y="136" font-family="Ubuntu" font-size="16" fill="#5E5E5E">Un conflit a été détecté pendant l'application de l'inventaire</text>
+  
+  <!-- Conteneur principal -->
+  <rect x="64" y="160" width="1072" height="200" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Section d'alerte -->
+  <rect x="96" y="184" width="1008" height="40" rx="4" fill="#E9B949" opacity="0.2"/>
+  <text x="120" y="210" font-family="Ubuntu" font-size="14" font-weight="500" fill="#AF8A36">Conflit détecté pour l'extension "GSConnect"</text>
+  
+  <!-- Description du conflit -->
+  <text x="96" y="252" font-family="Ubuntu" font-size="14" fill="#5E5E5E">La version de l'extension dans l'inventaire (v54) est différente de la version actuellement installée (v60).</text>
+  <text x="96" y="276" font-family="Ubuntu" font-size="14" fill="#5E5E5E">L'application de la version antérieure pourrait entraîner une perte de fonctionnalités ou des problèmes de compatibilité.</text>
+  
+  <!-- Section de question -->
+  <text x="96" y="316" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Comment souhaitez-vous résoudre ce conflit?</text>
+  
+  <!-- Options de comparaison -->
+  <rect x="64" y="380" width="1072" height="320" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Table de comparaison -->
+  <text x="96" y="420" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Comparaison des versions</text>
+  
+  <!-- En-têtes -->
+  <rect x="96" y="440" width="1008" height="40" rx="4" fill="#F5F5F7"/>
+  <text x="350" y="464" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">Version dans l'inventaire</text>
+  <text x="750" y="464" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">Version actuelle du système</text>
+  
+  <!-- Propriétés -->
+  <g transform="translate(96, 480)">
+    <!-- Ligne 1 -->
+    <rect y="0" width="1008" height="40" rx="0" fill="#FFFFFF"/>
+    <text x="24" y="26" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Version</text>
+    <text x="350" y="26" font-family="Ubuntu" font-size="14" fill="#202020">v54.0</text>
+    <text x="750" y="26" font-family="Ubuntu" font-size="14" fill="#202020">v60.0</text>
+    
+    <!-- Ligne 2 -->
+    <rect y="40" width="1008" height="40" rx="0" fill="#F5F5F7"/>
+    <text x="24" y="66" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Date d'installation</text>
+    <text x="350" y="66" font-family="Ubuntu" font-size="14" fill="#202020">15 janvier 2025</text>
+    <text x="750" y="66" font-family="Ubuntu" font-size="14" fill="#202020">1 mars 2025</text>
+    
+    <!-- Ligne 3 -->
+    <rect y="80" width="1008" height="40" rx="0" fill="#FFFFFF"/>
+    <text x="24" y="106" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Source</text>
+    <text x="350" y="106" font-family="Ubuntu" font-size="14" fill="#202020">extensions.gnome.org</text>
+    <text x="750" y="106" font-family="Ubuntu" font-size="14" fill="#202020">extensions.gnome.org</text>
+    
+    <!-- Ligne 4 -->
+    <rect y="120" width="1008" height="40" rx="0" fill="#F5F5F7"/>
+    <text x="24" y="146" font-family="Ubuntu" font-size="14" fill="#5E5E5E">État</text>
+    <text x="350" y="146" font-family="Ubuntu" font-size="14" fill="#202020">Activé</text>
+    <text x="750" y="146" font-family="Ubuntu" font-size="14" fill="#202020">Activé</text>
+  </g>
+  
+  <!-- Options de résolution -->
+  <rect x="96" y="624" width="492" height="56" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <circle cx="116" cy="652" r="10" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+  <circle cx="116" cy="652" r="4" fill="#772953"/>
+  <text x="136" y="652" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Conserver la version actuelle</text>
+  <text x="136" y="672" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Recommandé, conserve les fonctionnalités récentes</text>
+  
+  <rect x="612" y="624" width="492" height="56" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <circle cx="632" cy="652" r="10" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+  <text x="652" y="652" font-family="Ubuntu" font-size="14" fill="#202020">Appliquer la version de l'inventaire</text>
+  <text x="652" y="672" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Remplace par la version plus ancienne</text>
+  
+  <!-- Actions globales -->
+  <g transform="translate(64, 720)">
+    <rect width="240" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="24" y="24" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Appliquer à tous les conflits similaires</text>
+    <rect x="192" y="12" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Boutons d'action -->
+  <g transform="translate(64, 800)">
+    <rect x="772" y="-60" width="160" height="40" rx="4" fill="#772953"/>
+    <text x="852" y="-35" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Continuer</text>
+    
+    <rect x="596" y="-60" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="676" y="-35" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Ignorer</text>
+    
+    <rect y="-60" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="80" y="-35" font-family="Ubuntu" font-size="14" fill="#D64541" text-anchor="middle">Annuler tout</text>
+  </g>
+  
+  <!-- Compteur de conflits -->
+  <rect x="960" y="720" width="176" height="40" rx="4" fill="#F5F5F7"/>
+  <text x="1048" y="745" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Conflit 1 sur 3</text>
+</svg>

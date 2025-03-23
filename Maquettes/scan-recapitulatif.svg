@@ -1,0 +1,137 @@
+<!-- Maquettes/scan-recapitulatif.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="48" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Récapitulatif</text>
+  
+  <!-- Indicateur d'étapes -->
+  <rect x="240" y="116" width="720" height="2" rx="1" fill="#D1D1D6"/>
+  
+  <!-- Toutes les étapes complétées sauf la dernière qui est active -->
+  <circle cx="240" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="240" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Configuration</text>
+  
+  <circle cx="385" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="385" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Applications</text>
+  
+  <circle cx="530" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="530" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Extensions</text>
+  
+  <circle cx="675" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="675" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Apparence</text>
+  
+  <circle cx="820" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="820" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Configurations</text>
+  
+  <!-- Étape active -->
+  <circle cx="960" cy="116" r="8" fill="#772953" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="960" y="140" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Récapitulatif</text>
+
+  <!-- Layout en deux colonnes -->
+  <g transform="translate(64, 180)">
+    <!-- Colonne gauche - Informations de l'inventaire -->
+    <g>
+      <!-- Nom de l'inventaire -->
+      <g>
+        <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Nom de l'inventaire</text>
+        <rect y="24" width="400" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+        <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Configuration de travail</text>
+      </g>
+      
+      <!-- Description -->
+      <g transform="translate(0, 88)">
+        <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Description</text>
+        <rect y="24" width="400" height="80" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+        <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Configuration pour mon environnement de</text>
+        <text x="16" y="72" font-family="Ubuntu" font-size="14" fill="#202020">travail principal avec les applications essentielles</text>
+      </g>
+      
+      <!-- Tags -->
+      <g transform="translate(0, 192)">
+        <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Tags</text>
+        <rect y="24" width="400" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+        
+        <!-- Tag exemple -->
+        <rect x="16" y="32" width="80" height="24" rx="12" fill="#F5F5F7"/>
+        <text x="36" y="48" font-family="Ubuntu" font-size="13" fill="#5E5E5E">travail</text>
+        
+        <rect x="104" y="32" width="110" height="24" rx="12" fill="#F5F5F7"/>
+        <text x="124" y="48" font-family="Ubuntu" font-size="13" fill="#5E5E5E">développement</text>
+        
+        <text x="230" y="48" font-family="Ubuntu" font-size="13" fill="#772953">+ Ajouter</text>
+      </g>
+    </g>
+    
+    <!-- Colonne droite - Résumé des éléments -->
+    <g transform="translate(448, 0)">
+      <rect width="688" height="440" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Section Applications -->
+      <g transform="translate(24, 24)">
+        <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Applications</text>
+        <text x="0" y="32" font-family="Ubuntu" font-size="14" fill="#5E5E5E">32 applications sélectionnées</text>
+        <text x="520" y="32" font-family="Ubuntu" font-size="14" fill="#772953">Modifier</text>
+        <rect y="48" width="640" height="1" fill="#D1D1D6"/>
+      </g>
+      
+      <!-- Section Extensions -->
+      <g transform="translate(24, 104)">
+        <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Extensions GNOME</text>
+        <text x="0" y="32" font-family="Ubuntu" font-size="14" fill="#5E5E5E">8 extensions sélectionnées</text>
+        <text x="520" y="32" font-family="Ubuntu" font-size="14" fill="#772953">Modifier</text>
+        <rect y="48" width="640" height="1" fill="#D1D1D6"/>
+      </g>
+      
+      <!-- Section Apparence -->
+      <g transform="translate(24, 184)">
+        <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Thèmes et apparence</text>
+        <text x="0" y="32" font-family="Ubuntu" font-size="14" fill="#5E5E5E">5 éléments d'apparence sélectionnés</text>
+        <text x="520" y="32" font-family="Ubuntu" font-size="14" fill="#772953">Modifier</text>
+        <rect y="48" width="640" height="1" fill="#D1D1D6"/>
+      </g>
+      
+      <!-- Section Raccourcis -->
+      <g transform="translate(24, 264)">
+        <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Raccourcis clavier</text>
+        <text x="0" y="32" font-family="Ubuntu" font-size="14" fill="#5E5E5E">15 raccourcis personnalisés</text>
+        <text x="520" y="32" font-family="Ubuntu" font-size="14" fill="#772953">Modifier</text>
+        <rect y="48" width="640" height="1" fill="#D1D1D6"/>
+      </g>
+      
+      <!-- Section Configurations -->
+      <g transform="translate(24, 344)">
+        <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Configurations système</text>
+        <text x="0" y="32" font-family="Ubuntu" font-size="14" fill="#5E5E5E">10 configurations système incluses</text>
+        <text x="520" y="32" font-family="Ubuntu" font-size="14" fill="#772953">Modifier</text>
+        <rect y="48" width="640" height="1" fill="#D1D1D6"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Actions de navigation -->
+  <g transform="translate(64, 680)">
+    <rect width="120" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="60" y="25" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Précédent</text>
+    
+    <rect x="1024" y="0" width="120" height="40" rx="4" fill="#772953"/>
+    <text x="1084" y="25" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Terminer</text>
+  </g>
+  
+  <!-- Texte informatif -->
+  <text x="600" y="748" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">70 éléments sélectionnés • Taille estimée: 8.2 MB</text>
+</svg>

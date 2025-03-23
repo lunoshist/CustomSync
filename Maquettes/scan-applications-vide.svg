@@ -1,0 +1,98 @@
+<!-- Maquettes/scan-applications-vide.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="48" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Nouvel inventaire</text>
+  
+  <!-- Indicateur d'étapes -->
+  <rect x="240" y="116" width="720" height="2" rx="1" fill="#D1D1D6"/>
+  
+  <!-- Étape 1 complétée -->
+  <circle cx="240" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="240" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Configuration</text>
+  
+  <!-- Étape 2 active -->
+  <circle cx="385" cy="116" r="8" fill="#772953" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="385" y="140" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Applications</text>
+  
+  <!-- Étapes futures -->
+  <circle cx="530" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="530" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Extensions</text>
+  
+  <circle cx="675" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="675" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Apparence</text>
+  
+  <circle cx="820" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="820" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Configurations</text>
+  
+  <circle cx="960" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="960" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Récapitulatif</text>
+
+  <!-- En-tête de section -->
+  <text x="64" y="184" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Applications</text>
+  <text x="64" y="212" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Sélectionnez les applications à inclure dans l'inventaire</text>
+  
+  <!-- Barre d'outils -->
+  <g transform="translate(64, 232)">
+    <!-- Barre de recherche -->
+    <rect width="400" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <circle cx="20" cy="18" r="6" fill="none" stroke="#8E8E93" stroke-width="1.5"/>
+    <line x1="24" y1="22" x2="28" y2="26" stroke="#8E8E93" stroke-width="1.5"/>
+    <text x="40" y="23" font-family="Ubuntu" font-size="14" fill="#8E8E93">Rechercher...</text>
+    
+    <!-- Tout sélectionner (désactivé) -->
+    <rect x="416" y="0" width="130" height="36" rx="4" fill="#F5F5F7" stroke="#D1D1D6" stroke-width="1" opacity="0.6"/>
+    <text x="481" y="23" font-family="Ubuntu" font-size="14" fill="#8E8E93" text-anchor="middle">Tout sélectionner</text>
+    
+    <!-- Filtres (désactivé) -->
+    <rect x="562" y="0" width="120" height="36" rx="4" fill="#F5F5F7" stroke="#D1D1D6" stroke-width="1" opacity="0.6"/>
+    <text x="622" y="23" font-family="Ubuntu" font-size="14" fill="#8E8E93" text-anchor="middle">Filtres</text>
+  </g>
+  
+  <!-- Zone de contenu vide -->
+  <rect x="64" y="288" width="1072" height="372" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- État vide - Illustration -->
+  <g transform="translate(600, 420)">
+    <!-- Icône stylisée d'applications vides -->
+    <rect x="-40" y="-40" width="80" height="80" rx="16" fill="#F5F5F7"/>
+    <rect x="-24" y="-24" width="48" height="48" rx="8" fill="#EAEAEC"/>
+    <path d="M-12 -12 L12 -12 M-12 0 L12 0 M-12 12 L12 12" stroke="#D1D1D6" stroke-width="2"/>
+    
+    <!-- Message d'état vide -->
+    <text x="0" y="80" font-family="Ubuntu" font-size="16" font-weight="500" fill="#5E5E5E" text-anchor="middle">Aucune application détectée</text>
+    <text x="0" y="108" font-family="Ubuntu" font-size="14" fill="#8E8E93" text-anchor="middle">Aucune application installée n'a été trouvée sur ce système</text>
+  </g>
+  
+  <!-- Message d'aide/suggestion -->
+  <rect x="64" y="676" width="1072" height="72" rx="6" fill="#F5F5F7"/>
+  <text x="600" y="708" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Essayez de vérifier les permissions ou d'installer des applications</text>
+  <text x="600" y="732" font-family="Ubuntu" font-size="13" fill="#772953" text-anchor="middle">Voir les options de scan avancées</text>
+  
+  <!-- Actions de navigation -->
+  <g transform="translate(64, 780)">
+    <rect width="120" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="60" y="25" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Précédent</text>
+    
+    <rect x="680" y="0" width="120" height="40" rx="4" fill="#772953"/>
+    <text x="740" y="25" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Suivant</text>
+    
+    <rect x="540" y="0" width="120" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="600" y="25" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Ignorer cette étape</text>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+<!-- Maquettes/assistant-application-config.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="48" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Appliquer un inventaire</text>
+  
+  <!-- Indicateur d'étapes -->
+  <rect x="240" y="116" width="720" height="2" rx="1" fill="#D1D1D6"/>
+  
+  <!-- Étape 1 active -->
+  <circle cx="240" cy="116" r="8" fill="#772953" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="240" y="140" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Configuration</text>
+  
+  <!-- Étapes futures -->
+  <circle cx="385" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="385" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Applications</text>
+  
+  <circle cx="530" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="530" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Extensions</text>
+  
+  <circle cx="675" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="675" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Apparence</text>
+  
+  <circle cx="820" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="820" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Configurations</text>
+  
+  <circle cx="960" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="960" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Récapitulatif</text>
+  
+  <!-- Contenu principal -->
+  <rect x="240" y="180" width="720" height="500" rx="6" fill="#FFFFFF" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
+  
+  <!-- Titre de l'étape -->
+  <text x="280" y="224" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Sélection de l'inventaire</text>
+  <text x="280" y="252" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Choisissez l'inventaire à appliquer et le mode d'application.</text>
+  
+  <!-- Sélection d'inventaire -->
+  <text x="280" y="300" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Inventaire</text>
+  <rect x="280" y="316" width="640" height="48" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="304" y="346" font-family="Ubuntu" font-size="14" fill="#202020">Configuration de travail (9 mars 2025)</text>
+  <path d="M904 340 L912 340 M908 336 L912 340 L908 344" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  
+  <!-- Détails de l'inventaire sélectionné -->
+  <rect x="280" y="380" width="640" height="80" rx="4" fill="#F5F5F7"/>
+  <text x="304" y="408" font-family="Ubuntu" font-size="13" fill="#5E5E5E">70 éléments • Créé le 9 mars 2025 • Modifié le 9 mars 2025</text>
+  <text x="304" y="434" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Configuration pour mon environnement de travail principal avec les applications essentielles</text>
+  
+  <!-- Options d'application -->
+  <text x="280" y="496" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Mode d'application</text>
+  
+  <!-- Option rapide (sélectionnée) -->
+  <rect x="280" y="520" width="640" height="48" rx="4" fill="#F5F5F7"/>
+  <circle cx="304" cy="544" r="10" fill="#FFFFFF" stroke="#772953" stroke-width="2"/>
+  <circle cx="304" cy="544" r="4" fill="#772953"/>
+  <text x="328" y="544" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Application rapide</text>
+  <text x="328" y="564" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Appliquer tous les éléments en une seule étape</text>
+  
+  <!-- Option par étapes -->
+  <rect x="280" y="584" width="640" height="48" rx="4" fill="transparent"/>
+  <circle cx="304" cy="608" r="10" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="2"/>
+  <text x="328" y="608" font-family="Ubuntu" font-size="14" fill="#202020">Application par étapes</text>
+  <text x="328" y="628" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Sélectionner précisément les éléments à appliquer pour chaque catégorie</text>
+  
+  <!-- Actions -->
+  <rect x="240" y="700" width="720" height="60" rx="0" fill="#F5F5F7"/>
+  
+  <rect x="784" y="718" width="156" height="36" rx="4" fill="#772953"/>
+  <text x="855" y="740" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Commencer</text>
+  <path d="M890 732 L902 732 M896 726 L902 732 L896 738" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+  
+  <rect x="608" y="718" width="156" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="686" y="740" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Annuler</text>
+  
+  <!-- Options de protection -->
+  <rect x="280" y="648" width="640" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <rect x="296" y="658" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+  <path d="M299 668 L309 668 M299 668 L303 672 M299 668 L303 664" stroke="#772953" stroke-width="1.5"/>
+  <text x="328" y="672" font-family="Ubuntu" font-size="14" fill="#202020">Créer une sauvegarde de l'état actuel avant d'appliquer</text>
+</svg>

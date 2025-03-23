@@ -1,4 +1,7 @@
+# src/style/qmldir
+
 module Style
+
 singleton ColorPalette 1.0 ColorPalette.qml
 singleton Typography 1.0 Typography.qml
 singleton Spacing 1.0 Spacing.qml

@@ -1,0 +1,222 @@
+<!-- Maquettes/scan-select-apparence.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="48" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Nouvel inventaire</text>
+  
+  <!-- Indicateur d'étapes -->
+  <rect x="240" y="116" width="720" height="2" rx="1" fill="#D1D1D6"/>
+  
+  <!-- Étapes complétées -->
+  <circle cx="240" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="240" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Configuration</text>
+  
+  <circle cx="385" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="385" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Applications</text>
+  
+  <circle cx="530" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="530" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Extensions</text>
+  
+  <!-- Étape active -->
+  <circle cx="675" cy="116" r="8" fill="#772953" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="675" y="140" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Apparence</text>
+  
+  <!-- Étapes futures -->
+  <circle cx="820" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="820" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Configurations</text>
+  
+  <circle cx="960" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="960" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Récapitulatif</text>
+
+  <!-- En-tête de section -->
+  <text x="64" y="184" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Thèmes et apparence</text>
+  <text x="64" y="212" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Sélectionnez les éléments visuels que vous souhaitez inclure dans l'inventaire</text>
+  
+  <!-- Contenu principal organisé par onglets -->
+  <rect x="64" y="232" width="1072" height="428" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Navigation par onglets -->
+  <rect x="64" y="232" width="1072" height="48" rx="6 6 0 0" fill="#F5F5F7"/>
+  
+  <!-- Onglet Thèmes (actif) -->
+  <rect x="64" y="232" width="160" height="48" fill="#FFFFFF"/>
+  <text x="144" y="260" font-family="Ubuntu" font-size="14" font-weight="500" fill="#772953" text-anchor="middle">Thèmes</text>
+  <rect x="84" y="280" width="120" height="2" rx="1" fill="#772953"/>
+  
+  <!-- Autres onglets -->
+  <text x="274" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Icônes</text>
+  <text x="404" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Curseurs</text>
+  <text x="534" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Fonds d'écran</text>
+  <text x="664" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Polices</text>
+  <text x="794" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">GNOME Shell</text>
+  
+  <!-- Contenu de l'onglet Thèmes -->
+  <!-- Barre de filtres/recherche -->
+  <rect x="80" y="296" width="1040" height="40" rx="4" fill="#F5F5F7"/>
+  
+  <rect x="96" y="304" width="240" height="24" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <circle cx="110" cy="316" r="6" fill="none" stroke="#8E8E93" stroke-width="1.5"/>
+  <line x1="114" y1="320" x2="118" y2="324" stroke="#8E8E93" stroke-width="1.5"/>
+  <text x="128" y="320" font-family="Ubuntu" font-size="13" fill="#8E8E93">Rechercher...</text>
+  
+  <text x="360" y="320" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Type:</text>
+  <rect x="404" y="304" width="120" height="24" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="424" y="320" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Tous</text>
+  <path d="M508 312 L514 318 L508 324" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  
+  <rect x="950" y="304" width="154" height="24" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="984" y="320" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Tout sélectionner</text>
+  
+  <!-- Thèmes affichés en grille -->
+  <g transform="translate(80, 352)">
+    <!-- Thème 1 (sélectionné) -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#772953" stroke-width="2"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#333333"/>
+    <circle cx="26" cy="26" r="3" fill="#E64545"/>
+    <circle cx="36" cy="26" r="3" fill="#E6A545"/>
+    <circle cx="46" cy="26" r="3" fill="#65B158"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#FFFFFF"/>
+    
+    <!-- Checkbox sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+    <polyline points="21,114 25,118 31,110" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Yaru-dark</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Thème par défaut</text>
+  </g>
+  
+  <g transform="translate(340, 352)">
+    <!-- Thème 2 -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#3A3A3A"/>
+    <circle cx="26" cy="26" r="3" fill="#E88D7D"/>
+    <circle cx="36" cy="26" r="3" fill="#E8C77D"/>
+    <circle cx="46" cy="26" r="3" fill="#91D183"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#4D4D4D"/>
+    
+    <!-- Checkbox non sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Adwaita-dark</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">GNOME</text>
+  </g>
+  
+  <g transform="translate(600, 352)">
+    <!-- Thème 3 -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#5A4785"/>
+    <circle cx="26" cy="26" r="3" fill="#E88D7D"/>
+    <circle cx="36" cy="26" r="3" fill="#E8C77D"/>
+    <circle cx="46" cy="26" r="3" fill="#91D183"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#F0F0F0"/>
+    
+    <!-- Checkbox sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+    <polyline points="21,114 25,118 31,110" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Dracula</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Installé le 03/02/25</text>
+  </g>
+  
+  <g transform="translate(860, 352)">
+    <!-- Thème 4 -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#FFFFFF"/>
+    <circle cx="26" cy="26" r="3" fill="#E64545"/>
+    <circle cx="36" cy="26" r="3" fill="#E6A545"/>
+    <circle cx="46" cy="26" r="3" fill="#65B158"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#FCFCFC"/>
+    
+    <!-- Checkbox non sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Adwaita</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">GNOME</text>
+  </g>
+  
+  <g transform="translate(80, 508)">
+    <!-- Thème 5 -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#EEEEEE"/>
+    <circle cx="26" cy="26" r="3" fill="#E64545"/>
+    <circle cx="36" cy="26" r="3" fill="#E6A545"/>
+    <circle cx="46" cy="26" r="3" fill="#65B158"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#FCFCFC"/>
+    
+    <!-- Checkbox non sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Yaru</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Thème par défaut</text>
+  </g>
+  
+  <g transform="translate(340, 508)">
+    <!-- Thème 6 -->
+    <rect width="240" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Aperçu visuel -->
+    <rect x="16" y="16" width="208" height="72" rx="4" fill="#F5F5F7"/>
+    <rect x="16" y="16" width="208" height="20" rx="4 4 0 0" fill="#1A3047"/>
+    <circle cx="26" cy="26" r="3" fill="#E88D7D"/>
+    <circle cx="36" cy="26" r="3" fill="#E8C77D"/>
+    <circle cx="46" cy="26" r="3" fill="#91D183"/>
+    <rect x="26" y="46" width="188" height="32" rx="0" fill="#EAEAEA"/>
+    
+    <!-- Checkbox non sélectionné -->
+    <rect x="16" y="104" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+    
+    <!-- Infos -->
+    <text x="48" y="116" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Nordic</text>
+    <text x="48" y="134" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Installé le 15/01/25</text>
+  </g>
+  
+  <!-- Actions de navigation -->
+  <g transform="translate(64, 680)">
+    <rect width="120" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="60" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Précédent</text>
+    
+    <rect x="680" y="0" width="120" height="36" rx="4" fill="#772953"/>
+    <text x="740" y="23" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Suivant</text>
+    
+    <rect x="540" y="0" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="600" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Ignorer cette étape</text>
+  </g>
+  
+  <!-- Texte informatif -->
+  <text x="546" y="740" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">12 thèmes détectés • 2 sélectionnés</text>
+</svg>

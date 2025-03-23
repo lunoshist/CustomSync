@@ -1,4 +1,4 @@
-# test-qml.sh
+# OLD-test-qml.sh
 #!/bin/bash
 
 
@@ -14,9 +14,6 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Obtenir le chemin absolu du répertoire courant
-PROJECT_DIR=$(pwd)
-
 # Créer un script Python temporaire pour lancer le fichier QML
 echo "import sys
 from pathlib import Path
@@ -27,19 +24,12 @@ from PySide6.QtQml import QQmlApplicationEngine
 app = QGuiApplication(sys.argv)
 engine = QQmlApplicationEngine()
 
-# Ajouter les chemins d'importation
-engine.addImportPath('$PROJECT_DIR')
-engine.addImportPath('$PROJECT_DIR/src')
-engine.addImportPath('.')
+# Ajouter le chemin d'importation
+engine.addImportPath('src')
 
 # Charger le fichier QML spécifié
 file_path = Path('$1').resolve()
 print(f'Chargement du fichier: {file_path}')
-
-# Définir le dossier de travail au même niveau que le fichier QML
-qml_dir = file_path.parent
-print(f'Répertoire de travail QML: {qml_dir}')
-
 engine.load(QUrl.fromLocalFile(str(file_path)))
 
 if not engine.rootObjects():

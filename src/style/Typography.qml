@@ -1,3 +1,5 @@
+// src/style/Typography.qml
+
 pragma Singleton
 import QtQuick 2.15
 
@@ -30,69 +32,87 @@ QtObject {
     
     // Espacement des lettres
     readonly property real letterSpacingH1: -0.2
+    readonly property real letterSpacingH2: -0.1
+    readonly property real letterSpacingH3: 0
+    readonly property real letterSpacingH4: 0
+    readonly property real letterSpacingBody: 0
+    readonly property real letterSpacingSecondary: 0
+    readonly property real letterSpacingSmall: 0
     
-    // Configuration pré-définie pour les styles courants
-    function h1() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeH1,
-            "font.weight": fontWeightLight,
-            "lineHeight": lineHeightH1,
-            "font.letterSpacing": letterSpacingH1
-        }
+    // Espacement entre paragraphes
+    readonly property int paragraphSpacing: 20    // Espacement minimum entre paragraphes
+    
+    // Fonctions d'application du style
+    // Note: Ces fonctions sont conçues pour aider en code, mais les composants
+    // devraient utiliser directement les propriétés quand possible
+    
+    // Applique les propriétés de titre h1 à un Text
+    function applyH1Style(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeH1;
+        textItem.font.weight = fontWeightLight;
+        textItem.font.letterSpacing = letterSpacingH1;
+        textItem.lineHeight = lineHeightH1;
     }
     
-    function h2() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeH2,
-            "font.weight": fontWeightRegular,
-            "lineHeight": lineHeightH2
-        }
+    // Applique les propriétés de titre h2 à un Text
+    function applyH2Style(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeH2;
+        textItem.font.weight = fontWeightRegular;
+        textItem.font.letterSpacing = letterSpacingH2;
+        textItem.lineHeight = lineHeightH2;
     }
     
-    function h3() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeH3,
-            "font.weight": fontWeightMedium,
-            "lineHeight": lineHeightH3
-        }
+    // Applique les propriétés de titre h3 à un Text
+    function applyH3Style(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeH3;
+        textItem.font.weight = fontWeightMedium;
+        textItem.font.letterSpacing = letterSpacingH3;
+        textItem.lineHeight = lineHeightH3;
     }
     
-    function h4() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeH4,
-            "font.weight": fontWeightMedium,
-            "lineHeight": lineHeightH4
-        }
+    // Applique les propriétés de titre h4 à un Text
+    function applyH4Style(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeH4;
+        textItem.font.weight = fontWeightMedium;
+        textItem.font.letterSpacing = letterSpacingH4;
+        textItem.lineHeight = lineHeightH4;
     }
     
-    function body() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeBody,
-            "font.weight": fontWeightRegular,
-            "lineHeight": lineHeightBody
-        }
+    // Applique les propriétés de corps de texte à un Text
+    function applyBodyStyle(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeBody;
+        textItem.font.weight = fontWeightRegular;
+        textItem.font.letterSpacing = letterSpacingBody;
+        textItem.lineHeight = lineHeightBody;
     }
     
-    function secondary() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeSecondary,
-            "font.weight": fontWeightLight,
-            "lineHeight": lineHeightSecondary
-        }
+    // Applique les propriétés de texte secondaire à un Text
+    function applySecondaryStyle(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeSecondary;
+        textItem.font.weight = fontWeightLight;
+        textItem.font.letterSpacing = letterSpacingSecondary;
+        textItem.lineHeight = lineHeightSecondary;
     }
     
-    function small() {
-        return {
-            "font.family": fontFamily,
-            "font.pixelSize": fontSizeSmall,
-            "font.weight": fontWeightLight,
-            "lineHeight": lineHeightSmall
-        }
+    // Applique les propriétés de petit texte à un Text
+    function applySmallStyle(textItem) {
+        if (!textItem) return;
+        textItem.font.family = fontFamily;
+        textItem.font.pixelSize = fontSizeSmall;
+        textItem.font.weight = fontWeightLight;
+        textItem.font.letterSpacing = letterSpacingSmall;
+        textItem.lineHeight = lineHeightSmall;
     }
 }

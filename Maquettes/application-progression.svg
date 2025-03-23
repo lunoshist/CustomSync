@@ -1,0 +1,127 @@
+<!-- Maquettes/application-progression.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Application en cours</text>
+  <text x="64" y="136" font-family="Ubuntu" font-size="16" fill="#5E5E5E">Inventaire "Configuration de travail" en cours d'application</text>
+  
+  <!-- Conteneur principal -->
+  <rect x="64" y="160" width="1072" height="220" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Progression globale -->
+  <text x="96" y="200" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Progression globale</text>
+  <rect x="96" y="220" width="1008" height="16" rx="8" fill="#EAEAEC"/>
+  <rect x="96" y="220" width="604" height="16" rx="8" fill="#772953"/>
+  
+  <!-- Pourcentage et temps restant -->
+  <text x="96" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E">60% terminé</text>
+  <text x="1064" y="260" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="end">2 minutes restantes</text>
+  
+  <!-- Étape actuelle -->
+  <rect x="96" y="280" width="1008" height="64" rx="6" fill="#772953" opacity="0.1"/>
+  <text x="116" y="320" font-family="Ubuntu" font-size="16" font-weight="500" fill="#772953">Application des thèmes et apparence en cours...</text>
+  
+  <!-- Progression détaillée par catégorie -->
+  <rect x="64" y="400" width="1072" height="240" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="96" y="440" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Détails par catégorie</text>
+  
+  <!-- Tableau de progression -->
+  <g transform="translate(96, 470)">
+    <!-- En-têtes -->
+    <rect width="1008" height="32" rx="0" fill="#F5F5F7"/>
+    <text x="8" y="20" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Catégorie</text>
+    <text x="320" y="20" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Progression</text>
+    <text x="840" y="20" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Statut</text>
+    <text x="960" y="20" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Temps</text>
+    
+    <!-- Applications (terminé) -->
+    <g transform="translate(0, 32)">
+      <rect width="1008" height="32" rx="0" fill="#FFFFFF"/>
+      <text x="8" y="20" font-family="Ubuntu" font-size="14" fill="#202020">Applications (32)</text>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#EAEAEC"/>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#2D9D78"/>
+      <text x="840" y="20" font-family="Ubuntu" font-size="14" fill="#2D9D78">Terminé</text>
+      <text x="960" y="20" font-family="Ubuntu" font-size="14" fill="#5E5E5E">1:20</text>
+    </g>
+    
+    <!-- Extensions (terminé) -->
+    <g transform="translate(0, 64)">
+      <rect width="1008" height="32" rx="0" fill="#F5F5F7"/>
+      <text x="8" y="20" font-family="Ubuntu" font-size="14" fill="#202020">Extensions GNOME (8)</text>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#EAEAEC"/>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#2D9D78"/>
+      <text x="840" y="20" font-family="Ubuntu" font-size="14" fill="#2D9D78">Terminé</text>
+      <text x="960" y="20" font-family="Ubuntu" font-size="14" fill="#5E5E5E">0:45</text>
+    </g>
+    
+    <!-- Thèmes (en cours) -->
+    <g transform="translate(0, 96)">
+      <rect width="1008" height="32" rx="0" fill="#FFFFFF"/>
+      <rect width="1008" height="32" rx="0" fill="#772953" opacity="0.05"/>
+      <text x="8" y="20" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Thèmes et apparence (5)</text>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#EAEAEC"/>
+      <rect x="320" y="12" width="300" height="8" rx="4" fill="#772953"/>
+      <text x="840" y="20" font-family="Ubuntu" font-size="14" fill="#772953">En cours</text>
+      <text x="960" y="20" font-family="Ubuntu" font-size="14" fill="#5E5E5E">0:35</text>
+    </g>
+    
+    <!-- Raccourcis (en attente) -->
+    <g transform="translate(0, 128)">
+      <rect width="1008" height="32" rx="0" fill="#F5F5F7"/>
+      <text x="8" y="20" font-family="Ubuntu" font-size="14" fill="#202020">Raccourcis clavier (15)</text>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#EAEAEC"/>
+      <text x="840" y="20" font-family="Ubuntu" font-size="14" fill="#8E8E93">En attente</text>
+      <text x="960" y="20" font-family="Ubuntu" font-size="14" fill="#5E5E5E">~0:30</text>
+    </g>
+    
+    <!-- Configuration système (en attente) -->
+    <g transform="translate(0, 160)">
+      <rect width="1008" height="32" rx="0" fill="#FFFFFF"/>
+      <text x="8" y="20" font-family="Ubuntu" font-size="14" fill="#202020">Configurations système (10)</text>
+      <rect x="320" y="12" width="500" height="8" rx="4" fill="#EAEAEC"/>
+      <text x="840" y="20" font-family="Ubuntu" font-size="14" fill="#8E8E93">En attente</text>
+      <text x="960" y="20" font-family="Ubuntu" font-size="14" fill="#5E5E5E">~0:50</text>
+    </g>
+  </g>
+  
+  <!-- Journal d'activité -->
+  <rect x="64" y="660" width="1072" height="120" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  <text x="96" y="692" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Journal d'activité</text>
+  
+  <rect x="96" y="708" width="1008" height="56" rx="4" fill="#F5F5F7"/>
+  
+  <text x="112" y="728" font-family="Ubuntu" font-size="13" fill="#2D9D78">[✓] 14:32:15 - Installation des applications terminée</text>
+  <text x="112" y="748" font-family="Ubuntu" font-size="13" fill="#2D9D78">[✓] 14:33:05 - Configuration des extensions GNOME terminée</text>
+  <text x="552" y="728" font-family="Ubuntu" font-size="13" fill="#772953">[⟳] 14:33:20 - Application du thème Yaru-dark en cours...</text>
+  <text x="552" y="748" font-family="Ubuntu" font-size="13" fill="#8E8E93">[...] En attente: Configuration des raccourcis clavier</text>
+  
+  <!-- Boutons d'action -->
+  <g transform="translate(64, 800)">
+    <rect y="-60" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="80" y="-35" font-family="Ubuntu" font-size="14" fill="#D64541" text-anchor="middle">Annuler</text>
+    
+    <rect x="176" y="-60" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="256" y="-35" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Exécuter en arrière-plan</text>
+  </g>
+  
+  <!-- Option de sauvegarde automatique activée -->
+  <g transform="translate(976, 800)">
+    <rect y="-60" width="160" height="40" rx="4" fill="#F5F5F7"/>
+    <text x="24" y="-35" font-family="Ubuntu" font-size="13" fill="#2D9D78">• Sauvegarde créée</text>
+  </g>
+</svg>

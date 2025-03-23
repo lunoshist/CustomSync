@@ -1,0 +1,76 @@
+<!-- Maquettes/application-terminee.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Application terminée</text>
+  
+  <!-- Icône de succès -->
+  <g transform="translate(600, 200)">
+    <circle cx="0" cy="0" r="64" fill="#2D9D78" opacity="0.2"/>
+    <circle cx="0" cy="0" r="48" fill="#2D9D78"/>
+    <path d="M-20 0 L-7 15 L20 -15" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Message de confirmation -->
+  <g transform="translate(600, 310)">
+    <text x="0" y="0" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020" text-anchor="middle">Application réussie !</text>
+    <text x="0" y="32" font-family="Ubuntu" font-size="16" fill="#5E5E5E" text-anchor="middle">L'inventaire "Configuration de travail" a été appliqué avec succès.</text>
+  </g>
+  
+  <!-- Conteneur des statistiques -->
+  <rect x="300" y="360" width="600" height="200" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Contenu des statistiques -->
+  <g transform="translate(330, 390)">
+    <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Récapitulatif de l'application</text>
+    
+    <g transform="translate(0, 40)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Éléments appliqués:</text>
+      <text x="280" y="0" font-family="Ubuntu" font-size="14" fill="#202020">70</text>
+    </g>
+    
+    <g transform="translate(0, 72)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Temps total d'exécution:</text>
+      <text x="280" y="0" font-family="Ubuntu" font-size="14" fill="#202020">4 minutes et 12 secondes</text>
+    </g>
+    
+    <g transform="translate(0, 104)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Conflits résolus:</text>
+      <text x="280" y="0" font-family="Ubuntu" font-size="14" fill="#202020">3 conflits</text>
+    </g>
+    
+    <g transform="translate(0, 136)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Point de restauration créé:</text>
+      <text x="280" y="0" font-family="Ubuntu" font-size="14" fill="#202020">Sauvegarde du 9 mars 2025, 15:20</text>
+    </g>
+  </g>
+  
+  <!-- Conteneur du rapport détaillé -->
+  <rect x="300" y="580" width="600" height="80" rx="6" fill="#F5F5F7"/>
+  <text x="600" y="620" font-family="Ubuntu" font-size="14" fill="#772953" text-anchor="middle">Voir le rapport détaillé</text>
+  <text x="600" y="644" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">Un rapport complet a été enregistré et peut être consulté ultérieurement</text>
+  
+  <!-- Boutons d'action -->
+  <g transform="translate(300, 700)">
+    <rect x="320" y="0" width="280" height="40" rx="4" fill="#772953"/>
+    <text x="460" y="26" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Retour à l'accueil</text>
+    
+    <rect x="0" y="0" width="280" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="140" y="26" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Voir les détails de l'inventaire</text>
+  </g>
+</svg>

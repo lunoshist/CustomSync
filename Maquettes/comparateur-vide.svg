@@ -1,0 +1,61 @@
+<!-- Maquettes/comparateur-vide.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Comparateur d'inventaires</text>
+  <text x="64" y="136" font-family="Ubuntu" font-size="16" fill="#5E5E5E">Sélectionnez deux inventaires pour les comparer</text>
+  
+  <!-- Sélecteurs d'inventaires vides -->
+  <rect x="64" y="160" width="1072" height="80" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Premier inventaire -->
+  <text x="96" y="184" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Premier inventaire</text>
+  <rect x="96" y="192" width="420" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+  <text x="116" y="216" font-family="Ubuntu" font-size="14" fill="#8E8E93">Sélectionner un inventaire</text>
+  <path d="M496 204 L504 212 L496 220" stroke="#8E8E93" stroke-width="1.5" fill="none"/>
+  
+  <!-- Deuxième inventaire -->
+  <text x="684" y="184" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Deuxième inventaire</text>
+  <rect x="684" y="192" width="420" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+  <text x="704" y="216" font-family="Ubuntu" font-size="14" fill="#8E8E93">Sélectionner un inventaire</text>
+  <path d="M1084 204 L1092 212 L1084 220" stroke="#8E8E93" stroke-width="1.5" fill="none"/>
+  
+  <!-- Icône de comparaison -->
+  <circle cx="600" cy="210" r="24" fill="#F5F5F7"/>
+  <path d="M590 204 L610 216 M610 204 L590 216" stroke="#D1D1D6" stroke-width="2"/>
+  
+  <!-- Zone de contenu vide -->
+  <rect x="64" y="260" width="1072" height="440" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- État vide - Illustration -->
+  <g transform="translate(600, 400)">
+    <!-- Icône de comparaison stylisée -->
+    <circle cx="0" cy="0" r="80" fill="#F5F5F7"/>
+    <rect x="-50" y="-30" width="40" height="60" rx="4" fill="#EAEAEC" stroke="#D1D1D6" stroke-width="1"/>
+    <rect x="10" y="-30" width="40" height="60" rx="4" fill="#EAEAEC" stroke="#D1D1D6" stroke-width="1"/>
+    <path d="M-30 0 L30 0 M0 -15 L0 15" stroke="#D1D1D6" stroke-width="2"/>
+    
+    <!-- Message d'état vide -->
+    <text x="0" y="120" font-family="Ubuntu" font-size="16" font-weight="500" fill="#5E5E5E" text-anchor="middle">Aucun inventaire sélectionné</text>
+    <text x="0" y="148" font-family="Ubuntu" font-size="14" fill="#8E8E93" text-anchor="middle">Sélectionnez deux inventaires pour visualiser leurs différences</text>
+  </g>
+  
+  <!-- Message d'aide -->
+  <rect x="64" y="720" width="1072" height="60" rx="6" fill="#F5F5F7"/>
+  <text x="600" y="756" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">Conseil: Comparer des inventaires vous permet d'identifier les changements et de créer des inventaires fusionnés</text>
+</svg>

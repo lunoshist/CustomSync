@@ -1,0 +1,146 @@
+<!-- Maquettes/parametres-application.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="64" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Paramètres</text>
+  
+  <!-- Structure principale en deux colonnes -->
+  <g transform="translate(64, 132)">
+    <!-- Panneau de navigation (gauche) -->
+    <rect width="240" height="632" rx="6" fill="#F5F5F7"/>
+    
+    <!-- Items de navigation -->
+    <g transform="translate(0, 16)">
+      <rect width="240" height="40" rx="0" fill="#772953" opacity="0.1"/>
+      <rect width="4" height="40" rx="2" fill="#772953"/>
+      <text x="24" y="26" font-family="Ubuntu" font-size="14" font-weight="500" fill="#772953">Général</text>
+      
+      <rect y="48" width="240" height="40" rx="0" fill="transparent"/>
+      <text x="24" y="74" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Apparence</text>
+      
+      <rect y="96" width="240" height="40" rx="0" fill="transparent"/>
+      <text x="24" y="122" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Sauvegardes</text>
+      
+      <rect y="144" width="240" height="40" rx="0" fill="transparent"/>
+      <text x="24" y="170" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Emplacement des fichiers</text>
+      
+      <rect y="192" width="240" height="40" rx="0" fill="transparent"/>
+      <text x="24" y="218" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Avancé</text>
+      
+      <line x1="16" y1="256" x2="224" y2="256" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <rect y="272" width="240" height="40" rx="0" fill="transparent"/>
+      <text x="24" y="298" font-family="Ubuntu" font-size="14" fill="#5E5E5E">À propos</text>
+    </g>
+    
+    <!-- Contenu principal (droite) -->
+    <g transform="translate(256, 0)">
+      <rect width="816" height="632" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Paramètres généraux -->
+      <g transform="translate(32, 32)">
+        <text font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Paramètres généraux</text>
+        
+        <!-- Comportement -->
+        <g transform="translate(0, 48)">
+          <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Comportement</text>
+          
+          <!-- Option de démarrage -->
+          <g transform="translate(0, 32)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Écran de démarrage</text>
+            <rect x="400" y="-8" width="320" height="32" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+            <text x="416" y="14" font-family="Ubuntu" font-size="14" fill="#202020">Tableau de bord</text>
+            <path d="M704 8 L712 16 L704 24" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+          </g>
+          
+          <!-- Option de confirmation -->
+          <g transform="translate(0, 80)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Demander confirmation avant suppression</text>
+            <rect x="700" y="-8" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+            <path d="M703 2 L717 2 M703 2 L707 6 M703 2 L707 -2" stroke="#772953" stroke-width="1.5"/>
+          </g>
+          
+          <!-- Option de scan -->
+          <g transform="translate(0, 120)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Détecter automatiquement les nouveaux éléments</text>
+            <rect x="700" y="-8" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+            <path d="M703 2 L717 2 M703 2 L707 6 M703 2 L707 -2" stroke="#772953" stroke-width="1.5"/>
+          </g>
+        </g>
+        
+        <!-- Langue -->
+        <g transform="translate(0, 200)">
+          <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Langue et région</text>
+          
+          <!-- Langue -->
+          <g transform="translate(0, 32)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Langue de l'application</text>
+            <rect x="400" y="-8" width="320" height="32" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+            <text x="416" y="14" font-family="Ubuntu" font-size="14" fill="#202020">Français</text>
+            <path d="M704 8 L712 16 L704 24" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+          </g>
+          
+          <!-- Format de date -->
+          <g transform="translate(0, 80)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Format de date</text>
+            <rect x="400" y="-8" width="320" height="32" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+            <text x="416" y="14" font-family="Ubuntu" font-size="14" fill="#202020">JJ/MM/AAAA</text>
+            <path d="M704 8 L712 16 L704 24" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+          </g>
+        </g>
+        
+        <!-- Intégration système -->
+        <g transform="translate(0, 320)">
+          <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Intégration système</text>
+          
+          <!-- Démarrage automatique -->
+          <g transform="translate(0, 32)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Démarrer au lancement du système</text>
+            <rect x="700" y="-8" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+          </g>
+          
+          <!-- Intégration menu -->
+          <g transform="translate(0, 80)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Ajouter au menu contextuel</text>
+            <rect x="700" y="-8" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+            <path d="M703 2 L717 2 M703 2 L707 6 M703 2 L707 -2" stroke="#772953" stroke-width="1.5"/>
+          </g>
+          
+          <!-- Notifications -->
+          <g transform="translate(0, 128)">
+            <text font-family="Ubuntu" font-size="14" fill="#202020">Afficher les notifications système</text>
+            <rect x="700" y="-8" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+            <path d="M703 2 L717 2 M703 2 L707 6 M703 2 L707 -2" stroke="#772953" stroke-width="1.5"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Boutons d'action -->
+  <g transform="translate(320, 780)">
+    <rect x="520" y="-40" width="160" height="40" rx="4" fill="#772953"/>
+    <text x="600" y="-14" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Appliquer</text>
+    
+    <rect x="340" y="-40" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="420" y="-14" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Annuler</text>
+    
+    <rect x="0" y="-40" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="100" y="-14" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Restaurer les valeurs par défaut</text>
+  </g>
+</svg>

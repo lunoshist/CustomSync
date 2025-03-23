@@ -1,0 +1,197 @@
+AUDIT DE L'ENVIRONNEMENT QT
+Date d'exécution: Fri Mar 21 09:28:11 PM CET 2025
+
+==================================================
+============== INFORMATIONS PYTHON ===============
+==================================================
+Version Python: 3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]
+Chemin d'exécutable: /home/lunos/CODE/CustomSync/customsync-env/bin/python3
+Chemin d'importation: ['/home/lunos/CODE/CustomSync', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/home/lunos/CODE/CustomSync/customsync-env/lib/python3.12/site-packages', '/home/lunos/CODE/CustomSync/customsync-env/lib/python3.12/site-packages/setuptools/_vendor']
+
+==================================================
+================== LIAISONS QT ===================
+==================================================
+PySide6 installé: 6.8.2.1
+
+Modules PySide6 disponibles:
+  - QtCore ✓
+  - QtGui ✓
+  - QtWidgets ✓
+  - QtQml ✓
+  - QtQuick ✓
+  - QtQuickControls2 ✓
+  - QtQuickWidgets ✓
+  - QtSvg ✓
+  - QtSvgWidgets ✓
+  - Qt3DCore ✓
+  - Qt3DRender ✓
+  - Qt3DInput ✓
+  - Qt3DLogic ✓
+  - Qt3DExtras ✓
+  - QtMultimedia ✓
+  - QtNetwork ✓
+  - QtWebEngine ✗
+  - QtWebEngineCore ✓
+  - QtWebEngineWidgets ✓
+  - QtWebChannel ✓
+  - QtPositioning ✓
+  - QtPrintSupport ✓
+  - QtOpenGL ✓
+  - QtOpenGLWidgets ✓
+  - QtBluetooth ✓
+  - QtSensors ✓
+  - QtSerialPort ✓
+  - QtCharts ✓
+  - QtDataVisualization ✓
+  - QtConcurrent ✓
+  - QtXml ✓
+  - QtSql ✓
+  - QtTest ✓
+  - QtStateMachine ✓
+  - QtQuickTemplates2 ✗
+  - Qt3DAnimation ✓
+
+Qt version: 6.8.2
+Qt path: /home/lunos/CODE/CustomSync/customsync-env/lib/python3.12/site-packages/PySide6/QtCore.abi3.so
+
+PyQt6 installé
+
+PySide2 non installé
+
+PyQt5 non installé
+
+==================================================
+============ PAQUETS PYTHON INSTALLÉS ============
+==================================================
+autocommand==2.2.2
+backports.tarfile==1.2.0
+importlib-metadata==8.0.0
+inflect==7.3.1
+jaraco.collections==5.1.0
+jaraco.context==5.3.0
+jaraco.functools==4.0.1
+jaraco.text==3.12.1
+more-itertools==10.3.0
+packaging==24.2
+pip==24.0
+platformdirs==4.2.2
+pyqt6-qt6==6.8.2
+pyqt6-sip==13.10.0
+pyqt6==6.8.1
+pyside6-addons==6.8.2.1
+pyside6-essentials==6.8.2.1
+pyside6==6.8.2.1
+setuptools==77.0.3
+shiboken6==6.8.2.1
+tomli==2.0.1
+typeguard==4.3.0
+typing-extensions==4.12.2
+wheel==0.45.1
+zipp==3.19.2
+
+==================================================
+=========== CHEMINS D'IMPORTATION QML ============
+==================================================
+
+==================================================
+================== LIAISONS QT ===================
+==================================================
+PySide6 installé: 6.8.2.1
+
+Modules PySide6 disponibles:
+  - QtCore ✓
+  - QtGui ✓
+  - QtWidgets ✓
+  - QtQml ✓
+  - QtQuick ✓
+  - QtQuickControls2 ✓
+  - QtQuickWidgets ✓
+  - QtSvg ✓
+  - QtSvgWidgets ✓
+  - Qt3DCore ✓
+  - Qt3DRender ✓
+  - Qt3DInput ✓
+  - Qt3DLogic ✓
+  - Qt3DExtras ✓
+  - QtMultimedia ✓
+  - QtNetwork ✓
+  - QtWebEngine ✗
+  - QtWebEngineCore ✓
+  - QtWebEngineWidgets ✓
+  - QtWebChannel ✓
+  - QtPositioning ✓
+  - QtPrintSupport ✓
+  - QtOpenGL ✓
+  - QtOpenGLWidgets ✓
+  - QtBluetooth ✓
+  - QtSensors ✓
+  - QtSerialPort ✓
+  - QtCharts ✓
+  - QtDataVisualization ✓
+  - QtConcurrent ✓
+  - QtXml ✓
+  - QtSql ✓
+  - QtTest ✓
+  - QtStateMachine ✓
+  - QtQuickTemplates2 ✗
+  - Qt3DAnimation ✓
+
+Qt version: 6.8.2
+Qt path: /home/lunos/CODE/CustomSync/customsync-env/lib/python3.12/site-packages/PySide6/QtCore.abi3.so
+
+PyQt6 installé
+
+PySide2 non installé
+
+PyQt5 non installé
+Chemins d'importation QML pour PySide6:
+  - /home/lunos/CODE/CustomSync/customsync-env/lib/python3.12/site-packages/PySide6/Qt/qml
+
+==================================================
+============== STRUCTURE DU PROJET ===============
+==================================================
+Dossier actuel: /home/lunos/CODE/CustomSync
+
+Fichiers QML dans src/:
+  - src/screens/main.qml
+  - src/components/core/CSButton.qml
+  - src/style/ColorPalette.qml
+  - src/style/Radius.qml
+  - src/style/Elevation.qml
+  - src/style/Spacing.qml
+  - src/style/Theme.qml
+  - src/style/Typography.qml
+  - src/style/Animations.qml
+
+Analyse des importations dans les fichiers QML:
+
+  src/screens/main.qml:
+    - import QtQuick 2.15
+    - import QtQuick.Controls 2.15
+    - import QtQuick.Layouts 1.15
+    - import QtGraphicalEffects 1.15
+    - import "../style" as Style
+
+  src/style/ColorPalette.qml:
+    - import QtQuick 2.15
+
+  src/style/Radius.qml:
+    - import QtQuick 2.15
+
+  src/style/Elevation.qml:
+    - import QtQuick 2.15
+
+  src/style/Spacing.qml:
+    - import QtQuick 2.15
+
+  src/style/Theme.qml:
+    - import QtQuick 2.15
+    - import QtQuick.Window 2.15
+    - import Qt.labs.settings 1.0
+    - import "." as Style
+
+  src/style/Typography.qml:
+    - import QtQuick 2.15
+
+  src/style/Animations.qml:
+    - import QtQuick 2.15

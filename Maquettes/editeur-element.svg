@@ -1,0 +1,146 @@
+<!-- Maquettes/editeur-element.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Contenu principal -->
+  <rect x="64" y="72" width="1072" height="680" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- En-tête avec fil d'ariane -->
+  <g transform="translate(96, 100)">
+    <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Configuration de travail</text>
+    <text x="180" y="0" font-family="Ubuntu" font-size="14" fill="#5E5E5E">›</text>
+    <text x="200" y="0" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Applications</text>
+    <text x="290" y="0" font-family="Ubuntu" font-size="14" fill="#5E5E5E">›</text>
+    <text x="310" y="0" font-family="Ubuntu" font-size="14" font-weight="500" fill="#202020">Visual Studio Code</text>
+  </g>
+  
+  <!-- Titre de l'éditeur -->
+  <text x="96" y="144" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Modifier l'application</text>
+  
+  <!-- Formulaire d'édition -->
+  <g transform="translate(96, 180)">
+    <!-- Nom -->
+    <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Nom de l'application</text>
+    <rect y="24" width="400" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Visual Studio Code</text>
+    
+    <!-- Version -->
+    <g transform="translate(0, 80)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Version</text>
+      <rect y="24" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">1.87.2</text>
+    </g>
+    
+    <!-- Méthode d'installation -->
+    <g transform="translate(220, 80)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Mode d'installation</text>
+      <rect y="24" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Snap Store</text>
+    </g>
+    
+    <!-- Catégorie -->
+    <g transform="translate(0, 160)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Catégorie</text>
+      <rect y="24" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Développement</text>
+    </g>
+    
+    <!-- Priorité -->
+    <g transform="translate(220, 160)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Priorité</text>
+      <rect y="24" width="200" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Élevée</text>
+    </g>
+    
+    <!-- Options avancées -->
+    <g transform="translate(0, 240)">
+      <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Options avancées</text>
+      <rect y="32" width="420" height="160" rx="6" fill="#F5F5F7"/>
+      
+      <!-- Options -->
+      <g transform="translate(16, 56)">
+        <rect width="20" height="20" rx="2" fill="#FFFFFF" stroke="#772953" stroke-width="1.5"/>
+        <path d="M5 10 L15 10 M5 10 L9 14 M5 10 L9 6" stroke="#772953" stroke-width="1.5"/>
+        <text x="32" y="14" font-family="Ubuntu" font-size="14" fill="#202020">Inclure les données de configuration</text>
+      </g>
+      
+      <g transform="translate(16, 96)">
+        <rect width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+        <text x="32" y="14" font-family="Ubuntu" font-size="14" fill="#202020">Inclure les extensions/plugins</text>
+      </g>
+      
+      <g transform="translate(16, 136)">
+        <rect width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+        <text x="32" y="14" font-family="Ubuntu" font-size="14" fill="#202020">Forcer la réinstallation lors de l'application</text>
+      </g>
+    </g>
+    
+    <!-- Notes -->
+    <g transform="translate(0, 428)">
+      <text font-family="Ubuntu" font-size="14" fill="#5E5E5E">Notes (optionnelles)</text>
+      <rect y="24" width="400" height="80" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+      <text x="16" y="48" font-family="Ubuntu" font-size="14" fill="#202020">Éditeur principal pour le développement. Inclut les</text>
+      <text x="16" y="72" font-family="Ubuntu" font-size="14" fill="#202020">extensions essentielles pour Python et JavaScript.</text>
+    </g>
+  </g>
+  
+  <!-- Prévisualisation -->
+  <g transform="translate(576, 180)">
+    <text font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Prévisualisation</text>
+    
+    <!-- Aperçu de la carte -->
+    <rect y="32" width="420" height="140" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <circle cx="56" cy="80" r="24" fill="#772953" opacity="0.1"/>
+    <text x="56" y="85" font-family="Ubuntu" font-size="16" fill="#772953" text-anchor="middle">VS</text>
+    
+    <text x="96" y="72" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Visual Studio Code</text>
+    <text x="96" y="92" font-family="Ubuntu" font-size="13" fill="#5E5E5E">1.87.2 • Snap Store</text>
+    
+    <rect x="96" y="108" width="96" height="24" rx="12" fill="#EAEAEC"/>
+    <text x="144" y="124" font-family="Ubuntu" font-size="12" fill="#5E5E5E" text-anchor="middle">Développement</text>
+    
+    <rect x="200" y="108" width="80" height="24" rx="12" fill="#772953" opacity="0.2"/>
+    <text x="240" y="124" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Priorité élevée</text>
+    
+    <!-- Comportement lors de l'application -->
+    <text y="212" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Comportement lors de l'application</text>
+    <rect y="240" width="420" height="120" rx="6" fill="#F5F5F7"/>
+    
+    <text x="16" y="264" font-family="Ubuntu" font-size="14" fill="#202020">L'application sera installée depuis Snap Store</text>
+    <text x="16" y="296" font-family="Ubuntu" font-size="14" fill="#202020">Les fichiers de configuration utilisateur seront appliqués</text>
+    <text x="16" y="328" font-family="Ubuntu" font-size="14" fill="#202020">Les extensions et plugins ne seront pas inclus</text>
+    
+    <!-- Commande équivalente -->
+    <text y="400" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Commande équivalente</text>
+    <rect y="428" width="420" height="64" rx="6" fill="#202020"/>
+    <text x="16" y="455" font-family="Ubuntu" font-size="13" fill="#FFFFFF">$ sudo snap install code --classic</text>
+    <text x="16" y="475" font-family="Ubuntu" font-size="13" fill="#FFFFFF">$ cp -R ~/.config/Code ~/.config/Code.bak</text>
+  </g>
+  
+  <!-- Actions -->
+  <g transform="translate(96, 712)">
+    <rect x="0" y="0" width="120" height="40" rx="4" fill="#772953"/>
+    <text x="60" y="26" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Enregistrer</text>
+    
+    <rect x="136" y="0" width="120" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="196" y="26" font-family="Ubuntu" font-size="14" fill="#202020" text-anchor="middle">Annuler</text>
+    
+    <rect x="272" y="0" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="352" y="26" font-family="Ubuntu" font-size="14" fill="#D64541" text-anchor="middle">Supprimer l'élément</text>
+  </g>
+</svg>

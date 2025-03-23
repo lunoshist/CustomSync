@@ -1,0 +1,245 @@
+<!-- Maquettes/scan-select-extentions.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fond d'écran principal -->
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Barre de navigation supérieure -->
+  <rect width="1200" height="56" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+  
+  <!-- Logo et titre de l'application -->
+  <circle cx="32" cy="28" r="16" fill="#772953"/>
+  <text x="58" y="33" font-family="Ubuntu" font-size="18" font-weight="500" fill="#202020">CustomSync</text>
+  
+  <!-- Actions dans la barre de navigation -->
+  <rect x="1080" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <circle cx="1092" cy="28" r="8" fill="#772953" opacity="0.8"/>
+  <rect x="1128" y="16" width="24" height="24" rx="12" fill="#F5F5F7"/>
+  <path d="M1134 28 L1146 28 M1140 22 L1140 34" stroke="#5E5E5E" stroke-width="2"/>
+  
+  <!-- Titre principal -->
+  <text x="48" y="104" font-family="Ubuntu" font-size="28" font-weight="300" fill="#202020">Nouvel inventaire</text>
+  
+  <!-- Indicateur d'étapes -->
+  <rect x="240" y="116" width="720" height="2" rx="1" fill="#D1D1D6"/>
+  
+  <!-- Étapes complétées -->
+  <circle cx="240" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="240" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Configuration</text>
+  
+  <circle cx="385" cy="116" r="8" fill="#2D9D78" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="385" y="140" font-family="Ubuntu" font-size="12" fill="#2D9D78" text-anchor="middle">Applications</text>
+  
+  <!-- Étape active -->
+  <circle cx="530" cy="116" r="8" fill="#772953" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="530" y="140" font-family="Ubuntu" font-size="12" fill="#772953" text-anchor="middle">Extensions</text>
+  
+  <!-- Étapes futures -->
+  <circle cx="675" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="675" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Apparence</text>
+  
+  <circle cx="820" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="820" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Configurations</text>
+  
+  <circle cx="960" cy="116" r="6" fill="#D1D1D6"/>
+  <text x="960" y="140" font-family="Ubuntu" font-size="12" fill="#8E8E93" text-anchor="middle">Récapitulatif</text>
+
+  <!-- En-tête de section -->
+  <text x="64" y="184" font-family="Ubuntu" font-size="20" font-weight="500" fill="#202020">Extensions GNOME</text>
+  <text x="64" y="212" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Sélectionnez les extensions que vous souhaitez inclure dans l'inventaire</text>
+  
+  <!-- Barre d'outils -->
+  <g transform="translate(64, 232)">
+    <!-- Barre de recherche -->
+    <rect width="400" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <circle cx="20" cy="18" r="6" fill="none" stroke="#8E8E93" stroke-width="1.5"/>
+    <line x1="24" y1="22" x2="28" y2="26" stroke="#8E8E93" stroke-width="1.5"/>
+    <text x="40" y="23" font-family="Ubuntu" font-size="14" fill="#8E8E93">Rechercher...</text>
+    
+    <!-- Tout sélectionner -->
+    <rect x="416" y="0" width="130" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="481" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Tout sélectionner</text>
+    
+    <!-- État -->
+    <rect x="562" y="0" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="622" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">État: Tous</text>
+    <path d="M672 18 L678 24 L672 30" stroke="#5E5E5E" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Tableau des extensions -->
+  <g transform="translate(64, 288)">
+    <!-- Cadre du tableau -->
+    <rect width="800" height="372" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- En-tête du tableau -->
+    <rect width="800" height="40" fill="#F5F5F7"/>
+    <text x="52" y="25" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">Nom</text>
+    <text x="460" y="25" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">Version</text>
+    <text x="600" y="25" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">État</text>
+    <text x="700" y="25" font-family="Ubuntu" font-size="14" font-weight="500" fill="#5E5E5E">Source</text>
+    
+    <!-- Extension 1 -->
+    <g transform="translate(0, 40)">
+      <rect width="800" height="48" fill="#FFFFFF"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+      <polyline points="21,24 25,28 31,20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">Dash to Dock</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">80.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Actif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Extension 2 -->
+    <g transform="translate(0, 88)">
+      <rect width="800" height="48" fill="#F5F5F7"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+      <polyline points="21,24 25,28 31,20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">User Themes</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">45.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Actif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Extension 3 -->
+    <g transform="translate(0, 136)">
+      <rect width="800" height="48" fill="#FFFFFF"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+      <polyline points="21,24 25,28 31,20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">GSConnect</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">54.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Actif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Extension 4 (sélectionnée) -->
+    <g transform="translate(0, 184)">
+      <rect width="800" height="48" fill="#772953" opacity="0.05"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+      <polyline points="21,24 25,28 31,20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">Sound Input & Output Device Chooser</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">40.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Actif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Extension 5 -->
+    <g transform="translate(0, 232)">
+      <rect width="800" height="48" fill="#FFFFFF"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (non cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">Clipboard Indicator</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">42.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Inactif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Extension 6 -->
+    <g transform="translate(0, 280)">
+      <rect width="800" height="48" fill="#F5F5F7"/>
+      <line x1="0" y1="48" x2="800" y2="48" stroke="#D1D1D6" stroke-width="1"/>
+      
+      <!-- Checkbox (cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#772953" stroke="#772953" stroke-width="1.5"/>
+      <polyline points="21,24 25,28 31,20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">App Indicator</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">51.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#2D9D78">Actif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">Installé par défaut</text>
+    </g>
+    
+    <!-- Extension 7 -->
+    <g transform="translate(0, 328)">
+      <rect width="800" height="44" fill="#FFFFFF"/>
+      
+      <!-- Checkbox (non cochée) -->
+      <rect x="16" y="14" width="20" height="20" rx="2" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1.5"/>
+      
+      <text x="52" y="28" font-family="Ubuntu" font-size="14" fill="#202020">OpenWeather</text>
+      <text x="460" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">120.0</text>
+      <text x="600" y="28" font-family="Ubuntu" font-size="14" fill="#D64541">Inactif</text>
+      <text x="700" y="28" font-family="Ubuntu" font-size="14" fill="#5E5E5E">extensions.gnome.org</text>
+    </g>
+    
+    <!-- Scrollbar -->
+    <g transform="translate(780, 40)">
+      <rect width="20" height="332" fill="#F5F5F7" rx="3"/>
+      <rect x="4" y="10" width="12" height="100" fill="#D1D1D6" rx="6"/>
+    </g>
+  </g>
+  
+  <!-- Panneau de détail -->
+  <g transform="translate(880, 288)">
+    <rect width="300" height="372" rx="6" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
+    
+    <!-- Titre -->
+    <text x="24" y="32" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Détails de l'extension</text>
+    
+    <!-- Logo extension -->
+    <rect x="24" y="56" width="48" height="48" rx="4" fill="#772953" opacity="0.1"/>
+    <text x="48" y="88" font-family="Ubuntu" font-size="18" fill="#772953" text-anchor="middle">S</text>
+    
+    <!-- Nom extension -->
+    <text x="84" y="76" font-family="Ubuntu" font-size="16" font-weight="500" fill="#202020">Sound Input & Output Device Chooser</text>
+    <text x="84" y="96" font-family="Ubuntu" font-size="13" fill="#5E5E5E">Contrôle des périphériques audio</text>
+    
+    <!-- Séparateur -->
+    <line x1="24" y1="120" x2="276" y2="120" stroke="#D1D1D6" stroke-width="1"/>
+    
+    <!-- Infos détaillées -->
+    <g transform="translate(24, 140)">
+      <text font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Version</text>
+      <text x="150" y="0" font-family="Ubuntu" font-size="13" fill="#202020">40.0</text>
+      
+      <text y="32" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">État</text>
+      <text x="150" y="32" font-family="Ubuntu" font-size="13" fill="#2D9D78">Actif</text>
+      
+      <text y="64" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Source</text>
+      <text x="150" y="64" font-family="Ubuntu" font-size="13" fill="#202020">extensions.gnome.org</text>
+      
+      <text y="96" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Installé le</text>
+      <text x="150" y="96" font-family="Ubuntu" font-size="13" fill="#202020">15 janvier 2025</text>
+      
+      <text y="128" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Auteur</text>
+      <text x="150" y="128" font-family="Ubuntu" font-size="13" fill="#202020">kgshank</text>
+    </g>
+    
+    <!-- Description -->
+    <text x="24" y="284" font-family="Ubuntu" font-size="13" font-weight="500" fill="#5E5E5E">Description</text>
+    <rect x="24" y="294" width="252" height="60" fill="#F5F5F7" rx="4"/>
+    <text x="32" y="312" font-family="Ubuntu" font-size="13" fill="#5E5E5E" width="236">Cette extension permet de choisir facilement les périphériques d'entrée et de sortie audio depuis le panneau supérieur.</text>
+  </g>
+  
+  <!-- Actions de navigation -->
+  <g transform="translate(64, 680)">
+    <rect width="120" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="60" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Précédent</text>
+    
+    <rect x="680" y="0" width="120" height="36" rx="4" fill="#772953"/>
+    <text x="740" y="23" font-family="Ubuntu" font-size="14" fill="#FFFFFF" text-anchor="middle">Suivant</text>
+    
+    <rect x="540" y="0" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#D1D1D6" stroke-width="1"/>
+    <text x="600" y="23" font-family="Ubuntu" font-size="14" fill="#5E5E5E" text-anchor="middle">Ignorer cette étape</text>
+  </g>
+  
+  <!-- Texte informatif -->
+  <text x="546" y="740" font-family="Ubuntu" font-size="13" fill="#5E5E5E" text-anchor="middle">15 extensions détectées • 5 sélectionnées</text>
+</svg>
