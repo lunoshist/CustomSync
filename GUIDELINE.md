@@ -1,3 +1,5 @@
+# GUIDELINE.md
+
 # Méthodologie de Développement par Agents IA
 
 Ce document définit les directives et le fonctionnement du développement de projets réalisés par des agents IA sous la supervision d'un unique intervenant humain. Il explique les spécificités de cette approche et les bonnes pratiques à suivre pour tous les agents impliqués.
