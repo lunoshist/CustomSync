@@ -138,7 +138,7 @@ Pour plus de détails, consultez [SYSTEM_TOKENS.md](SYSTEM_TOKENS.md).
 
 ## Documentation
 
-Avant de contribuer au projet, consulter les [Lignes directives](GUIDELINE) du projet.
+Avant de contribuer au projet, consulter les la méthodologie et les lignes directrices du projet : [GUIDELINE](GUIDELINE.md).
 
 Le projet à déjà connus des problèmes et des solutions, listées par le document [Points d'attention techniques](Documentation/Points-d-attention-techniques.md)
 
