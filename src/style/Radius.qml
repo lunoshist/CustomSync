@@ -1,7 +1,7 @@
 // src/style/Radius.qml
 
 pragma Singleton
-import QtQuick 2.15
+import QtQuick 6.5
 
 QtObject {
     // Coins arrondis
@@ -21,7 +21,9 @@ QtObject {
             case "s": radiusValue = s; break;
             case "m": radiusValue = m; break;
             case "l": radiusValue = l; break;
-            default: radiusValue = (typeof size === "number") ? size : s;
+            default: 
+                // Vérifier si c'est un nombre
+                radiusValue = (typeof size === "number") ? size : s;
         }
         
         // Appliquer le rayon à l'élément

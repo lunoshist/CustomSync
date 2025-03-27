@@ -50,7 +50,7 @@ Le système de tokens QML vise à :
 
 ### Structure des fichiers
 
-Le système de tokens est organisé en 7 fichiers QML singleton dans `src/style/` :
+Le système de tokens est organisé en 8 fichiers QML singleton dans `src/style/` :
 
 ```
 src/style/
@@ -70,12 +70,27 @@ L'architecture est conçue pour être :
 - **Extensible** : Facile à étendre avec de nouveaux tokens
 - **Adaptative** : Supporte les thèmes clair et sombre
 - **Réactive** : Les changements de thème sont propagés à l'interface
+- **Performante** : Utilisation de caches pour optimiser les performances
+- **Persistante** : Les préférences de thème sont sauvegardées entre les sessions
 
 ### Modèle de singleton
 
 Chaque fichier (sauf qmldir) utilise `pragma Singleton` pour déclarer un singleton QML, permettant l'accès global à ses propriétés sans instanciation. Chaque singleton encapsule un `QtObject` contenant des propriétés et fonctions.
 
-`Theme.qml` sert de point d'entrée centralisé, exposant les propriétés des autres modules adaptées au thème actuel (clair ou sombre).
+`Theme.qml` sert de point d'entrée centralisé, exposant les propriétés des autres modules adaptées au thème actuel (clair ou sombre) via un système de cache optimisé pour éviter les boucles de liaison.
+
+### Système de caching
+
+Pour optimiser les performances, en particulier lors des changements de thème :
+
+1. **Theme.qml** utilise un système de caching intelligent qui :
+   - Initialise des objets de cache au démarrage
+   - Met à jour les caches uniquement lors des changements de thème
+   - Utilise des fonctions d'accès pour éviter les boucles de liaison (binding loops)
+
+2. Le caching est particulièrement important pour :
+   - Les objets volumineux comme `colors` et `elevation`
+   - Les changements fréquents comme les basculements de thème
 
 ## Installation et importation
 
@@ -100,6 +115,9 @@ singleton Theme 1.0 Theme.qml
 Dans vos fichiers QML, importez le système avec :
 
 ```qml
+import QtQuick 6.5
+// Autres imports nécessaires
+
 import "../style" as Style
 ```
 
@@ -117,7 +135,7 @@ Rectangle {
 }
 ```
 
-1. **Via Theme** (s'adapte au thème actuel **RECOMMANDÉ**) :
+2. **Via Theme** (s'adapte au thème actuel **RECOMMANDÉ**) :
 ```qml
 Rectangle {
     color: Style.Theme.colors.backgroundSecondary  // S'adapte au thème actif
@@ -125,15 +143,17 @@ Rectangle {
 }
 ```
 
-L'approche recommandée est de toujours utiliser `Style.Theme.XXX` que se soit pour les couleurs ou pour les autres propriétés (car on ne sait jamais si elle sont dépendentes du thème Ex: imaginons qu'un jour on mette un thème de noël qui change la typographie).
+L'approche recommandée est de toujours utiliser `Style.Theme.XXX` que ce soit pour les couleurs ou pour les autres propriétés (car on ne sait jamais si elles seront dépendantes du thème dans le futur, par exemple si on décide d'implémenter un thème festif pour Noël qui changerait aussi la typographie).
 
 ## Tokens de design
 
-## ColorPalette
+Cette section détaille chaque module du système de tokens, ses propriétés et fonctions, ainsi que des exemples d'utilisation.
+
+### ColorPalette
 
 Définit toutes les couleurs du système pour les modes clair et sombre.
 
-### Propriétés principales (mode clair)
+#### Propriétés principales (mode clair)
 
 ```qml
 // Couleurs de base
@@ -165,24 +185,54 @@ readonly property color buttonPrimaryActive: accentDark
 readonly property color buttonPrimaryDisabled: Qt.rgba(accent.r, accent.g, accent.b, 0.5)
 
 readonly property color buttonSecondaryBg: backgroundSecondary
-readonly property color buttonSecondaryText: TextPrimary
+readonly property color buttonSecondaryText: textPrimary
 readonly property color buttonSecondaryHover: backgroundTertiary
 readonly property color buttonSecondaryActive: separator
 readonly property color buttonSecondaryBorder: separator
 ```
 
-### Mode sombre
+#### Mode sombre
 
-Toutes les propriétés du mode sombre sont préfixées par "dark" :
+Toutes les propriétés du mode sombre sont préfixées par "dark" et correspondent à leurs équivalents clairs :
 
 ```qml
 readonly property color darkBackgroundPrimary: "#1E1E1E"
 readonly property color darkTextPrimary: "#F0F0F0"
+readonly property color darkSuccess: "#3DB389"
 // etc.
 ```
 
-### Utilisation
+#### Fonctions utilitaires
 
+ColorPalette offre des fonctions utilitaires pour manipuler les couleurs :
+
+```qml
+/**
+ * Génère une version semi-transparente d'une couleur
+ * @param {color} baseColor - Couleur de base
+ * @param {real} opacity - Opacité (0-1)
+ * @return {color} - Couleur semi-transparente
+ */
+function withOpacity(baseColor, opacity)
+
+/**
+ * Crée une teinte plus claire d'une couleur
+ * @param {color} baseColor - Couleur de base
+ * @param {real} factor - Facteur d'éclaircissement (0-1)
+ * @return {color} - Couleur éclaircie
+ */
+function lighter(baseColor, factor)
+
+/**
+ * Crée une teinte plus sombre d'une couleur
+ * @param {color} baseColor - Couleur de base
+ * @param {real} factor - Facteur d'assombrissement (0-1)
+ * @return {color} - Couleur assombrie
+ */
+function darker(baseColor, factor)
+```
+
+#### Utilisation
 
 ```qml
 Rectangle {
@@ -193,14 +243,20 @@ Rectangle {
         color: Style.Theme.colors.textPrimary
         text: "Exemple"
     }
+    
+    // Utilisation des fonctions utilitaires
+    Rectangle {
+        color: Style.Theme.colorPalette.withOpacity(Style.Theme.colors.accent, 0.3)
+        // Crée une version semi-transparente de la couleur d'accent
+    }
 }
 ```
 
-## Typography
+### Typography
 
 Gère tous les aspects typographiques du système.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 // Famille de police
@@ -242,34 +298,27 @@ readonly property real letterSpacingSmall: 0
 readonly property int paragraphSpacing: 20    // Espacement minimum entre paragraphes
 ```
 
-### Fonctions d'aide
+#### Fonctions d'aide
 
 Typography propose des fonctions d'aide pour appliquer rapidement tous les styles :
 
 ```qml
-// Applique les propriétés de titre h1 à un élément Text
+/**
+ * Applique les propriétés de titre h1 à un Text
+ * @param {Text} textItem - L'élément Text à styliser
+ */
 function applyH1Style(textItem)
 
-// Applique les propriétés de titre h2 à un élément Text
+/**
+ * Applique les propriétés de titre h2 à un Text
+ * @param {Text} textItem - L'élément Text à styliser
+ */
 function applyH2Style(textItem)
 
-// Applique les propriétés de titre h3 à un élément Text
-function applyH3Style(textItem)
-
-// Applique les propriétés de titre h4 à un élément Text
-function applyH4Style(textItem)
-
-// Applique les propriétés de corps de texte à un élément Text
-function applyBodyStyle(textItem)
-
-// Applique les propriétés de texte secondaire à un élément Text
-function applySecondaryStyle(textItem)
-
-// Applique les propriétés de petit texte à un élément Text
-function applySmallStyle(textItem)
+// ... autres fonctions similaires pour h3, h4, body, secondary, small
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
 // Utilisation directe des propriétés
@@ -309,11 +358,11 @@ Column {
 }
 ```
 
-## Spacing
+### Spacing
 
 Définit un système d'espacement cohérent basé sur une unité de 8px et une grille à 12 colonnes.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 readonly property int unit: 8        // Unité de base
@@ -335,54 +384,39 @@ readonly property int columns: 12    // Nombre de colonnes
 readonly property int gutterSize: 16 // Gouttières
 ```
 
-### Fonctions d'aide
+#### Fonctions d'aide
 
 ```qml
-// Calcule la largeur d'une colonne en fonction de la largeur totale disponible
-// totalWidth: largeur totale disponible
-// numColumns: nombre de colonnes à calculer (1-12)
-// Retourne: largeur en pixels pour le nombre de colonnes spécifié
+/**
+ * Calcule la largeur d'une colonne en fonction de la largeur totale disponible
+ * @param {real} totalWidth - Largeur totale disponible
+ * @param {int} numColumns - Nombre de colonnes à calculer (1-12)
+ * @return {real} - Largeur en pixels pour le nombre de colonnes spécifié
+ */
 function columnWidth(totalWidth, numColumns)
 
-// Calcule le décalage (offset) pour commencer à la colonne spécifiée
-// totalWidth: largeur totale disponible
-// startColumn: colonne de départ (1-12)
-// Retourne: décalage en pixels pour commencer à la colonne spécifiée
+/**
+ * Calcule le décalage (offset) pour commencer à la colonne spécifiée
+ * @param {real} totalWidth - Largeur totale disponible
+ * @param {int} startColumn - Colonne de départ (1-12)
+ * @return {real} - Décalage en pixels pour commencer à la colonne spécifiée
+ */
 function columnOffset(totalWidth, startColumn)
 
-// Multiplie l'unité de base par un facteur
-// factor: facteur de multiplication
-// Retourne: valeur en pixels (unit * factor)
+/**
+ * Multiplie l'unité de base par un facteur
+ * @param {real} factor - Facteur de multiplication
+ * @return {real} - Valeur en pixels (unit * factor)
+ */
 function multiply(factor)
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
 // Utilisation des espacements prédéfinis
 Column {
     spacing: Style.Theme.spacing.m  // 16px d'espacement vertical
-    
-    Rectangle {
-        anchors.margins: Style.Theme.spacing.s  // 8px de marge
-    }
-}
-
-// Utilisation du système de grille
-Rectangle {
-    width: Style.Theme.spacing.columnWidth(parent.width, 6)  // 6 colonnes sur 12
-    x: Style.Theme.spacing.columnOffset(parent.width, 4)     // Commence à la 4e colonne
-}
-
-// Création d'une rangée avec 3 éléments et des espacements égaux
-Row {
-    spacing: Style.Theme.spacing.gutterSize
-    
-    Rectangle {
-        width: Style.Theme.spacing.columnWidth(parent.width, 3)
-        height: 50
-        color: "red"
-    }
     
     Rectangle {
         width: Style.Theme.spacing.columnWidth(parent.width, 3)
@@ -404,11 +438,11 @@ Item {
 }
 ```
 
-## Elevation
+### Elevation
 
 Définit les ombres pour créer une hiérarchie spatiale dans l'interface.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 // Niveau 0 - Surface de base (pas d'ombre)
@@ -416,8 +450,9 @@ readonly property var noShadow: {
     "horizontalOffset": 0,
     "verticalOffset": 0,
     "radius": 0,
-    "samples": 17,  // Important pour Qt 6
-    "color": Qt.rgba(0, 0, 0, 0)
+    "samples": 17,  // Requis pour Qt5Compat.GraphicalEffects
+    "color": Qt.rgba(0, 0, 0, 0),
+    "cssValue": "none"
 }
 
 // Niveau 1 - Élévation basse (composants interactifs)
@@ -425,8 +460,9 @@ readonly property var shadowLow: {
     "horizontalOffset": 0,
     "verticalOffset": 1,
     "radius": 3,
-    "samples": 17,  // Important pour Qt 6
-    "color": Qt.rgba(0, 0, 0, 0.08)
+    "samples": 17,  // Requis pour Qt5Compat.GraphicalEffects
+    "color": Qt.rgba(0, 0, 0, 0.08),
+    "cssValue": "0 1px 3px rgba(0,0,0,0.08)"
 }
 
 // Niveau 2 - Élévation moyenne (cartes et éléments flottants)
@@ -446,24 +482,32 @@ readonly property var darkShadowHigh: { ... }
 readonly property var darkInnerShadow: { ... }
 ```
 
-### Fonctions d'aide
+#### Fonctions d'aide
 
 ```qml
-// Applique une ombre selon le niveau et le thème à un élément avec effet DropShadow
-// target: élément cible avec layer.effect de type DropShadow
-// level: niveau d'ombre ("low", "medium", "high")
-// isDark: utiliser le thème sombre (true) ou clair (false)
+/**
+ * Applique une ombre selon le niveau et le thème à un élément avec effet DropShadow
+ * @param {Object} target - élément cible avec layer.effect de type DropShadow
+ * @param {string} level - niveau d'ombre ("low", "medium", "high")
+ * @param {boolean} isDark - utiliser le thème sombre (true) ou clair (false)
+ */
 function applyDropShadow(target, level, isDark)
+
+/**
+ * Applique une ombre intérieure à un élément
+ * @param {Object} target - élément cible avec layer.effect de type InnerShadow
+ * @param {boolean} isDark - utiliser le thème sombre (true) ou clair (false)
+ */
+function applyInnerShadow(target, isDark)
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
 // Utilisation avec DropShadow
 import Qt5Compat.GraphicalEffects
 
 Rectangle {
-
     layer.enabled: true
     layer.effect: DropShadow {
         horizontalOffset: Style.Theme.elevation.shadowMedium.horizontalOffset
@@ -490,19 +534,22 @@ Rectangle {
     // Appliquer l'ombre intérieure uniquement en focus
     layer.enabled: isFocused
     layer.effect: InnerShadow {
-        horizontalOffset: Style.Theme.elevation.innerShadow.horizontalOffset
-        verticalOffset: Style.Theme.elevation.innerShadow.verticalOffset
-        radius: Style.Theme.elevation.innerShadow.radius
-        color: Style.Theme.elevation.innerShadow.color
+        // Propriétés initialisées vides
+    }
+    
+    onIsFocusedChanged: {
+        if (isFocused) {
+            Style.Theme.elevation.applyInnerShadow(inputField, Style.Theme.isDarkTheme)
+        }
     }
 }
 ```
 
-## Radius
+### Radius
 
 Fournit les rayons standard pour les coins arrondis.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 readonly property int xs: 2  // Badges, tags
@@ -511,14 +558,18 @@ readonly property int m: 6   // Cartes, conteneurs
 readonly property int l: 8   // Dialogues, grands conteneurs
 ```
 
-### Fonctions d'aide
+#### Fonctions d'aide
 
 ```qml
-// Applique un rayon à un élément
+/**
+ * Applique un rayon à un élément
+ * @param {Object} item - élément cible
+ * @param {string|number} size - taille du rayon ("xs", "s", "m", "l" ou valeur numérique)
+ */
 function applyRadius(item, size)
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
 Rectangle {
@@ -541,11 +592,11 @@ Component.onCompleted: {
 }
 ```
 
-## Animations
+### Animations
 
-Définit les durées et courbes d'animation standards.
+Définit les durées et courbes d'animation standards avec une approche déclarative plutôt que dynamique.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 // Durées
@@ -556,7 +607,7 @@ readonly property int durationEmphasis: 300    // Transitions mises en valeur
 // Courbes
 readonly property int easeOut: Easing.OutQuad
 readonly property int easeInOut: Easing.InOutQuad
-readonly property int emphasizedCurve: Easing.BezierSpline  // Noter BezierSpline pour Qt 6
+readonly property int emphasizedCurve: Easing.BezierSpline
 readonly property var emphasizedParams: [0.4, 0, 0.2, 1]
 
 // Configurations prédéfinies pour les transitions
@@ -575,37 +626,52 @@ readonly property var emphasisTransitionParams: {
     "easing": emphasizedCurve,
     "bezierCurve": emphasizedParams
 }
+
+// Modèles prédéfinis pour différentes propriétés
+readonly property var behaviorTemplates: { /* Templates pour opacity, position, size, color */ }
 ```
 
-### Fonctions d'aide
+#### Fonctions d'aide
 
 ```qml
-// Crée un objet NumberAnimation avec les paramètres standards
-// property: propriété à animer (ex: "opacity", "x,y,z")
-// Retourne: objet de configuration pour NumberAnimation
-function createStandardAnimation(property)
+/**
+ * Crée un objet de configuration pour une NumberAnimation
+ * @param {string} property - propriété à animer (ex: "opacity", "x,y,z")
+ * @param {string} [speed="standard"] - vitesse d'animation ("fast", "standard", "emphasis")
+ * @return {Object} - objet de configuration pour NumberAnimation
+ */
+function createNumberAnimation(property, speed)
 
-// Crée un objet NumberAnimation avec les paramètres rapides
-// property: propriété à animer
-// Retourne: objet de configuration pour NumberAnimation
-function createFastAnimation(property)
+/**
+ * Crée un objet de configuration pour une ColorAnimation
+ * @param {string} property - propriété à animer (ex: "color", "border.color")
+ * @param {string} [speed="standard"] - vitesse d'animation ("fast", "standard", "emphasis")
+ * @return {Object} - objet de configuration pour ColorAnimation
+ */
+function createColorAnimation(property, speed)
 
-// Crée un objet NumberAnimation avec les paramètres d'emphase
-// property: propriété à animer
-// Retourne: objet de configuration pour NumberAnimation
-function createEmphasisAnimation(property)
+/**
+ * Génère du code QML pour un Behavior standardisé
+ * Approche déclarative plutôt que dynamique
+ * 
+ * @param {string} property - nom de la propriété à animer
+ * @param {string} type - type d'animation ("number", "color")
+ * @param {string} [speed="standard"] - vitesse d'animation ("fast", "standard", "emphasis")
+ * @return {string} - code QML à utiliser dans un fichier QML
+ */
+function getAnimationCode(property, type, speed)
 
-// Applique une animation standard à une propriété de l'objet cible
-// target: élément cible
-// property: nom de la propriété à animer
-// Retourne: le composant Behavior créé
-function applyStandardBehavior(target, property)
+/**
+ * Génère une configuration d'animation pour les transitions de thème
+ * @return {Object} - Objet de configuration pour les transitions de thème
+ */
+function createThemeTransition()
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
-// Utilisation des propriétés
+// Approche déclarative recommandée
 Behavior on opacity {
     NumberAnimation {
         duration: Style.Theme.animations.durationStandard
@@ -617,7 +683,6 @@ Behavior on opacity {
 Behavior on color {
     ColorAnimation {
         duration: Style.Theme.animations.durationFast
-        easing.type: Style.Theme.animations.easeOut
     }
 }
 
@@ -630,36 +695,52 @@ NumberAnimation {
     easing.bezierCurve: Style.Theme.animations.emphasizedParams
 }
 
-// Utilisation de la fonction applyStandardBehavior
-Component.onCompleted: {
-    Style.Theme.animations.applyStandardBehavior(myRect, "opacity")
-}
-
-// Animation séquentielle
-SequentialAnimation {
+// Générer et copier du code d'animation
+/*
+// Exemple de code généré par getAnimationCode("opacity", "number", "standard")
+Behavior on opacity {
     NumberAnimation {
-        target: myRect
+        duration: 200
+        easing.type: Easing.OutQuad
+    }
+}
+*/
+
+// Utilisation de la configuration de transition de thème
+SequentialAnimation {
+    id: themeChangeAnimation
+    
+    PropertyAnimation {
+        target: mainContent
         property: "opacity"
-        to: 0.5
+        to: 0.8
         duration: Style.Theme.animations.durationFast
         easing.type: Style.Theme.animations.easeOut
     }
     
-    NumberAnimation {
-        target: myRect
+    PropertyAnimation {
+        target: mainContent
         property: "opacity"
         to: 1.0
-        duration: Style.Theme.animations.durationStandard
+        duration: Style.Theme.animations.durationFast
         easing.type: Style.Theme.animations.easeOut
+    }
+}
+
+// Lancer l'animation lors du changement de thème
+Connections {
+    target: Style.Theme
+    function onThemeChanged() {
+        themeChangeAnimation.start()
     }
 }
 ```
 
-## Theme
+### Theme
 
-Point d'entrée qui expose les tokens adaptés au thème actuel.
+Point d'entrée qui expose les tokens adaptés au thème actuel avec un système de cache optimisé pour éviter les boucles de liaison.
 
-### Propriétés principales
+#### Propriétés principales
 
 ```qml
 // État du thème
@@ -669,17 +750,15 @@ property bool followSystemTheme: true     // Suivre le thème du système
 // Signal émis lors du changement de thème
 signal themeChanged()
 
-// Couleurs adaptées au thème
-readonly property var colors: { 
-    "backgroundPrimary": isDarkTheme ? Style.ColorPalette.darkBackgroundPrimary : Style.ColorPalette.backgroundPrimary,
-    ...                                   // Toutes les propriété de colorPalette directement adaptée au theme
-    }
+// Objets de cache pour optimiser la création
+property var _colorCache: ({})
+property var _elevationCache: ({})
 
-// Élévations adaptées au thème
-readonly property var elevation: { 
-    "noShadow": isDarkTheme ? Elevation.darkNoShadow : Elevation.noShadow,
-    ...                                   // Toutes les propriété d'Elevation directement adaptée au theme
-    }
+// Couleurs adaptées au thème (renvoie le cache)
+readonly property var colors: _getColors()
+
+// Élévations adaptées au thème (renvoie le cache)
+readonly property var elevation: _getElevation()
 
 // Références aux autres modules
 readonly property var typography: Typography
@@ -688,33 +767,72 @@ readonly property var radius: Radius
 readonly property var animations: Animations
 ```
 
-### Fonctions principales
+#### Fonctions principales
 
 ```qml
-// Fonction appelée depuis Python pour mettre à jour le thème système
-// isDark: true pour le thème sombre, false pour le thème clair
-function setSystemDarkTheme(isDark)
+/**
+ * Fonction d'accès au cache des couleurs
+ * @private
+ * @return {Object} - Cache de couleurs
+ */
+function _getColors()
 
-// Basculer manuellement entre thème clair et sombre
+/**
+ * Fonction d'accès au cache des élévations
+ * @private
+ * @return {Object} - Cache d'élévations
+ */
+function _getElevation()
+
+/**
+ * Crée l'objet de couleurs complet
+ * @private
+ * @return {Object} - Objet avec toutes les couleurs adaptées au thème
+ */
+function _createColorObject()
+
+/**
+ * Crée l'objet d'élévation complet
+ * @private
+ * @return {Object} - Objet avec toutes les élévations adaptées au thème
+ */
+function _createElevationObject()
+
+/**
+ * Fonction appelée depuis Python pour mettre à jour le thème système
+ * @param {bool} isDark - true pour le thème sombre, false pour le thème clair
+ */
+function setSystemTheme(isDark)
+
+/**
+ * Bascule manuellement entre thème clair et sombre
+ */
 function toggleDarkMode()
 
-// Activer le suivi du thème système
+/**
+ * Active le suivi du thème système
+ */
 function enableFollowSystemTheme()
 
-// Vérifier si un élément est en thème sombre
-// item: élément à vérifier (peut avoir sa propre propriété isDarkTheme)
-// Retourne: true si l'élément doit utiliser le thème sombre
+/**
+ * Vérifie si un élément est en thème sombre
+ * @param {Object} item - élément à vérifier (peut avoir sa propre propriété isDarkTheme)
+ * @return {bool} - true si l'élément doit utiliser le thème sombre
+ */
 function isItemDark(item)
 
-// Appliquer une couleur adaptée au thème à un élément
-// item: élément cible
-// property: nom de la propriété (ex: "color", "border.color")
-// lightColor: couleur pour le thème clair
-// darkColor: couleur pour le thème sombre
+/**
+ * Applique une couleur adaptée au thème à un élément
+ * @param {Object} item - élément cible
+ * @param {string} property - nom de la propriété (ex: "color", "border.color")
+ * @param {color} lightColor - couleur pour le thème clair
+ * @param {color} darkColor - couleur pour le thème sombre
+ * @return {bool} - true si l'opération a réussi
+ */
 function applyThemedColor(item, property, lightColor, darkColor)
 ```
 
-### Utilisation
+#### Utilisation
 
 ```qml
 // Utilisation des couleurs adaptées au thème
@@ -756,7 +874,6 @@ Component.onCompleted: {
     Style.Theme.applyThemedColor(rectangle, "color", "#F5F5F7", "#252528")
 }
 ```
-
 
 ## Problèmes courants à éviter
 
@@ -815,8 +932,80 @@ QML Column: Column called polish() inside updatePolish() of Column
 - Éviter les dépendances circulaires dans les tailles
 - Pour les listes complexes, utiliser ListView avec des délégués bien définis
 
-### 5. Utiliser du scaling pour des effet hover
+### 5. Utiliser du scaling pour des effets hover
 
 **Problème** : Utiliser du scaling pour des effets de hover peut rendre les textes flous
 
-**Solution** : Priviligier des changements d'ombres
+**Solution** : Privilégier des changements d'ombres ou d'autres propriétés visuelles qui n'affectent pas la netteté du texte
+
+## Intégration avec Python
+
+Le système de tokens est conçu pour s'intégrer avec Python pour la détection du thème système d'Ubuntu. Le fichier `main.py` contient une fonction pour détecter le thème système et le communiquer au QML :
+
+```python
+def detect_system_dark_theme():
+    """Détecte si le thème système est sombre."""
+    # Cette fonction est spécifique à la plateforme
+    
+    # Sur Linux avec GNOME
+    if sys.platform.startswith("linux"):
+        try:
+            import subprocess
+            # Pour GNOME
+            result = subprocess.run(
+                ["gsettings", "get", "org.gnome.desktop.interface", "color-scheme"],
+                capture_output=True, text=True
+            )
+            if "dark" in result.stdout.lower():
+                return True
+            
+            # Pour GNOME plus ancien ou autres environnements
+            result = subprocess.run(
+                ["gsettings", "get", "org.gnome.desktop.interface", "gtk-theme"],
+                capture_output=True, text=True
+            )
+            return "dark" in result.stdout.lower()
+        except:
+            pass
+    
+    # Autres plateformes...
+    
+    return False
+```
+
+Cette fonction est appelée périodiquement pour mettre à jour l'interface en fonction des préférences système.
+
+## Bonnes pratiques d'utilisation
+
+1. **Toujours utiliser le module Theme**
+   - Privilégier `Style.Theme.colors.backgroundPrimary` plutôt que `Style.ColorPalette.backgroundPrimary`
+   - Cela garantit que les couleurs s'adaptent automatiquement au thème actif
+
+2. **Structures adaptées pour les éléments répétitifs**
+   - Créer des composants réutilisables qui tirent parti du système de tokens
+   - Définir les propriétés de style dans des objets QtObject pour une meilleure organisation
+
+3. **Réaction aux changements de thème**
+   - Se connecter au signal `Style.Theme.themeChanged()` pour mettre à jour les éléments dynamiques
+   - Utiliser des animations de transition pour adoucir les changements de thème
+
+4. **Utilisation des effets visuels**
+   - Toujours définir `layer.enabled: true` sur les éléments avec effets
+   - Toujours spécifier le paramètre `samples` pour les effets Drop/InnerShadow
+   - Utiliser les fonctions d'aide comme `applyDropShadow` et `applyInnerShadow`
+
+5. **Documentation des composants**
+   - Documenter clairement quels tokens sont utilisés dans chaque composant personnalisé
+   - Créer une documentation visuelle montrant les variations de thème
+
+6. **Test des deux thèmes**
+   - Tester régulièrement les composants dans les deux thèmes pour assurer la compatibilité
+   - Vérifier les contrastes et la lisibilité dans les deux modes
+
+## Conclusion
+
+Ce système de tokens fournit une base solide et cohérente pour l'interface utilisateur de CustomSync. En centralisant toutes les propriétés visuelles et en gérant automatiquement les thèmes, il permet de développer plus rapidement tout en maintenant une expérience utilisateur de haute qualité.
+
+L'approche optimisée avec caching et l'évitement des boucles de liaison assure une performance fluide même lors des changements de thème.
+
+Pour toute question ou suggestion d'amélioration concernant ce système, veuillez consulter la documentation du projet ou contacter l'équipe de développement.

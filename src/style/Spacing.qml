@@ -1,7 +1,7 @@
 // src/style/Spacing.qml
 
 pragma Singleton
-import QtQuick 2.15
+import QtQuick 6.5
 
 QtObject {
     // Unité de base
@@ -25,11 +25,17 @@ QtObject {
     readonly property int columns: 12            // Nombre de colonnes
     readonly property int gutterSize: 16         // Taille des gouttières de grille
     
-    // Calcule la largeur d'une colonne en fonction de la largeur totale disponible
-    // Prend en compte les gouttières entre les colonnes
+    /**
+     * Calcule la largeur d'une colonne en fonction de la largeur totale disponible
+     * @param {real} totalWidth - Largeur totale disponible
+     * @param {int} numColumns - Nombre de colonnes à calculer (1-12)
+     * @return {real} - Largeur en pixels pour le nombre de colonnes spécifié
+     */
     function columnWidth(totalWidth, numColumns) {
-        if (numColumns <= 0 || numColumns > columns) 
+        if (!totalWidth || numColumns <= 0 || numColumns > columns) {
+            console.warn("Spacing.columnWidth: paramètres invalides, totalWidth=" + totalWidth + ", numColumns=" + numColumns);
             return 0;
+        }
         
         // Calculer l'espace total pris par les gouttières
         // Il y a (columns - 1) gouttières dans une grille complète
@@ -42,16 +48,31 @@ QtObject {
         return singleColWidth * numColumns + gutterSize * (numColumns - 1);
     }
     
-    // Calcule le décalage (offset) pour commencer à la colonne spécifiée
+    /**
+     * Calcule le décalage (offset) pour commencer à la colonne spécifiée
+     * @param {real} totalWidth - Largeur totale disponible
+     * @param {int} startColumn - Colonne de départ (1-12)
+     * @return {real} - Décalage en pixels pour commencer à la colonne spécifiée
+     */
     function columnOffset(totalWidth, startColumn) {
-        if (startColumn <= 0 || startColumn > columns)
+        if (!totalWidth || startColumn <= 0 || startColumn > columns) {
+            console.warn("Spacing.columnOffset: paramètres invalides, totalWidth=" + totalWidth + ", startColumn=" + startColumn);
             return 0;
+        }
         
         return columnWidth(totalWidth, startColumn - 1) + (startColumn > 1 ? gutterSize : 0);
     }
     
-    // Multiplie l'unité de base par un facteur
+    /**
+     * Multiplie l'unité de base par un facteur
+     * @param {real} factor - Facteur de multiplication
+     * @return {real} - Valeur en pixels (unit * factor)
+     */
     function multiply(factor) {
+        if (typeof factor !== "number") {
+            console.warn("Spacing.multiply: facteur non numérique, utilisation de 1 par défaut");
+            factor = 1;
+        }
         return unit * factor;
     }
 }

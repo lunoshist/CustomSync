@@ -1,7 +1,7 @@
 // src/screens/main.qml
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick 6.5
+import QtQuick.Controls 6.5
 import Qt5Compat.GraphicalEffects
 
 // Import du module Style
@@ -16,11 +16,11 @@ ApplicationWindow {
     objectName: "mainWindow"
     
     // Définir la couleur de fond en utilisant le système de thème
-    color: Style.Theme.colors.background
+    color: Style.Theme.colors.backgroundPrimary
     
     // Exposer la fonction pour mettre à jour le thème depuis Python
     function setSystemTheme(isDark) {
-        Style.Theme.setSystemDarkTheme(isDark);
+        Style.Theme.setSystemTheme(isDark);
     }
     
     // Connexion au changement de thème
@@ -40,16 +40,16 @@ ApplicationWindow {
             target: centerContent
             property: "opacity"
             to: 0.8
-            duration: Style.Animations.durationFast
-            easing.type: Style.Animations.easeOut
+            duration: Style.Theme.animations.durationFast
+            easing.type: Style.Theme.animations.easeOut
         }
         
         PropertyAnimation {
             target: centerContent
             property: "opacity"
             to: 1.0
-            duration: Style.Animations.durationFast
-            easing.type: Style.Animations.easeOut
+            duration: Style.Theme.animations.durationFast
+            easing.type: Style.Theme.animations.easeOut
         }
     }
     
@@ -65,13 +65,13 @@ ApplicationWindow {
             id: titleText
             text: "CustomSync"
             color: Style.Theme.colors.textPrimary
-            font.family: Style.Typography.fontFamily
-            font.pixelSize: Style.Typography.fontSizeH1
-            font.weight: Style.Typography.fontWeightLight
-            font.letterSpacing: Style.Typography.letterSpacingH1
+            font.family: Style.Theme.typography.fontFamily
+            font.pixelSize: Style.Theme.typography.fontSizeH1
+            font.weight: Style.Theme.typography.fontWeightLight
+            font.letterSpacing: Style.Theme.typography.letterSpacingH1
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.m
+            anchors.topMargin: Style.Theme.spacing.m
         }
         
         // Description
@@ -79,68 +79,68 @@ ApplicationWindow {
             id: descriptionText
             text: "Application de sauvegarde et restauration des personnalisations système pour Ubuntu"
             color: Style.Theme.colors.textSecondary
-            font.family: Style.Typography.fontFamily
-            font.pixelSize: Style.Typography.fontSizeBody
-            font.weight: Style.Typography.fontWeightRegular
-            width: parent.width - Style.Spacing.xl * 2
+            font.family: Style.Theme.typography.fontFamily
+            font.pixelSize: Style.Theme.typography.fontSizeBody
+            font.weight: Style.Theme.typography.fontWeightRegular
+            width: parent.width - Style.Theme.spacing.xl * 2
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
             anchors.top: titleText.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.m
+            anchors.topMargin: Style.Theme.spacing.m
         }
         
         // Séparateur
         Rectangle {
             id: separator
-            width: parent.width - Style.Spacing.xl * 2
+            width: parent.width - Style.Theme.spacing.xl * 2
             height: 4
             color: Style.Theme.colors.accent
-            radius: Style.Radius.xs
+            radius: Style.Theme.radius.xs
             anchors.top: descriptionText.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.l
+            anchors.topMargin: Style.Theme.spacing.l
         }
         
         // Bouton primaire
         Rectangle {
             id: primaryButton
-            width: primaryButtonText.width + Style.Spacing.xl
+            width: primaryButtonText.width + Style.Theme.spacing.xl
             height: 40
             color: mouseAreaPrimary.pressed ? Style.Theme.colors.buttonPrimaryActive : 
                    mouseAreaPrimary.containsMouse ? Style.Theme.colors.buttonPrimaryHover : 
-                   Style.Theme.colors.accent
-            radius: Style.Radius.s
+                   Style.Theme.colors.buttonPrimaryBg
+            radius: Style.Theme.radius.s
             anchors.top: separator.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.l
+            anchors.topMargin: Style.Theme.spacing.l
             
             // Effet d'ombre
             layer.enabled: true
             layer.effect: DropShadow {
                 id: primaryButtonShadow
-                horizontalOffset: Style.Theme.elevation.low.horizontalOffset
-                verticalOffset: Style.Theme.elevation.low.verticalOffset
-                radius: Style.Theme.elevation.low.radius
-                samples: 17
-                color: Style.Theme.elevation.low.color
+                horizontalOffset: Style.Theme.elevation.shadowLow.horizontalOffset
+                verticalOffset: Style.Theme.elevation.shadowLow.verticalOffset
+                radius: Style.Theme.elevation.shadowLow.radius
+                samples: Style.Theme.elevation.shadowLow.samples
+                color: Style.Theme.elevation.shadowLow.color
             }
             
             // Animation de transition de couleur
             Behavior on color {
                 ColorAnimation {
-                    duration: Style.Animations.durationFast
-                    easing.type: Style.Animations.easeOut
+                    duration: Style.Theme.animations.durationFast
+                    easing.type: Style.Theme.animations.easeOut
                 }
             }
             
             Text {
                 id: primaryButtonText
                 text: "Nouvelle sauvegarde"
-                color: "white"
-                font.family: Style.Typography.fontFamily
-                font.pixelSize: Style.Typography.fontSizeBody
-                font.weight: Style.Typography.fontWeightMedium
+                color: Style.Theme.colors.buttonPrimaryText
+                font.family: Style.Theme.typography.fontFamily
+                font.pixelSize: Style.Theme.typography.fontSizeBody
+                font.weight: Style.Theme.typography.fontWeightMedium
                 anchors.centerIn: parent
             }
             
@@ -159,8 +159,8 @@ ApplicationWindow {
             // Animation de l'échelle
             Behavior on scale {
                 NumberAnimation {
-                    duration: Style.Animations.durationFast
-                    easing.type: Style.Animations.easeOut
+                    duration: Style.Theme.animations.durationFast
+                    easing.type: Style.Theme.animations.easeOut
                 }
             }
         }
@@ -168,33 +168,33 @@ ApplicationWindow {
         // Bouton secondaire
         Rectangle {
             id: secondaryButton
-            width: secondaryButtonText.width + Style.Spacing.xl
+            width: secondaryButtonText.width + Style.Theme.spacing.xl
             height: 40
             color: mouseAreaSecondary.pressed ? Style.Theme.colors.buttonSecondaryActive : 
                    mouseAreaSecondary.containsMouse ? Style.Theme.colors.buttonSecondaryHover : 
                    Style.Theme.colors.buttonSecondaryBg
             border.width: 1
             border.color: Style.Theme.colors.separator
-            radius: Style.Radius.s
+            radius: Style.Theme.radius.s
             anchors.top: primaryButton.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.m
+            anchors.topMargin: Style.Theme.spacing.m
             
             // Animation de transition de couleur
             Behavior on color {
                 ColorAnimation {
-                    duration: Style.Animations.durationFast
-                    easing.type: Style.Animations.easeOut
+                    duration: Style.Theme.animations.durationFast
+                    easing.type: Style.Theme.animations.easeOut
                 }
             }
             
             Text {
                 id: secondaryButtonText
                 text: "Changer de thème"
-                color: Style.Theme.colors.textPrimary
-                font.family: Style.Typography.fontFamily
-                font.pixelSize: Style.Typography.fontSizeBody
-                font.weight: Style.Typography.fontWeightRegular
+                color: Style.Theme.colors.buttonSecondaryText
+                font.family: Style.Theme.typography.fontFamily
+                font.pixelSize: Style.Theme.typography.fontSizeBody
+                font.weight: Style.Theme.typography.fontWeightRegular
                 anchors.centerIn: parent
             }
             
@@ -213,8 +213,8 @@ ApplicationWindow {
             // Animation de l'échelle
             Behavior on scale {
                 NumberAnimation {
-                    duration: Style.Animations.durationFast
-                    easing.type: Style.Animations.easeOut
+                    duration: Style.Theme.animations.durationFast
+                    easing.type: Style.Theme.animations.easeOut
                 }
             }
         }
@@ -222,15 +222,15 @@ ApplicationWindow {
         // Carte d'information
         Rectangle {
             id: infoCard
-            width: parent.width - Style.Spacing.xl * 2
-            height: cardContent.implicitHeight + Style.Spacing.xl * 2
-            color: Style.Theme.colors.background
+            width: parent.width - Style.Theme.spacing.xl * 2
+            height: cardContent.implicitHeight + Style.Theme.spacing.xl * 2
+            color: Style.Theme.colors.backgroundPrimary
             border.width: 1
             border.color: Style.Theme.colors.separator
-            radius: Style.Radius.m
+            radius: Style.Theme.radius.m
             anchors.top: secondaryButton.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: Style.Spacing.l
+            anchors.topMargin: Style.Theme.spacing.l
             
             // Propriété pour gérer l'état du hover
             property bool isHovered: false
@@ -250,22 +250,22 @@ ApplicationWindow {
                 // Animation du changement d'ombre
                 Behavior on verticalOffset {
                     NumberAnimation {
-                        duration: Style.Animations.durationStandard
-                        easing.type: Style.Animations.easeOut
+                        duration: Style.Theme.animations.durationStandard
+                        easing.type: Style.Theme.animations.easeOut
                     }
                 }
                 
                 Behavior on radius {
                     NumberAnimation {
-                        duration: Style.Animations.durationStandard
-                        easing.type: Style.Animations.easeOut
+                        duration: Style.Theme.animations.durationStandard
+                        easing.type: Style.Theme.animations.easeOut
                     }
                 }
                 
                 Behavior on color {
                     ColorAnimation {
-                        duration: Style.Animations.durationStandard
-                        easing.type: Style.Animations.easeOut
+                        duration: Style.Theme.animations.durationStandard
+                        easing.type: Style.Theme.animations.easeOut
                     }
                 }
             }
@@ -274,9 +274,9 @@ ApplicationWindow {
             Item {
                 id: cardContent
                 anchors.fill: parent
-                anchors.margins: Style.Spacing.m
+                anchors.margins: Style.Theme.spacing.m
                 implicitHeight: cardTitle.height + separator2.height + themeText.height + 
-                               systemThemeText.height + badge.height + Style.Spacing.s * 4
+                               systemThemeText.height + badge.height + Style.Theme.spacing.s * 4
                 
                 // Titre de la carte
                 Text {
@@ -284,9 +284,9 @@ ApplicationWindow {
                     width: parent.width
                     text: "Informations système"
                     color: Style.Theme.colors.textPrimary
-                    font.family: Style.Typography.fontFamily
-                    font.pixelSize: Style.Typography.fontSizeH3
-                    font.weight: Style.Typography.fontWeightMedium
+                    font.family: Style.Theme.typography.fontFamily
+                    font.pixelSize: Style.Theme.typography.fontSizeH3
+                    font.weight: Style.Theme.typography.fontWeightMedium
                     anchors.top: parent.top
                     anchors.left: parent.left
                 }
@@ -298,7 +298,7 @@ ApplicationWindow {
                     height: 1
                     color: Style.Theme.colors.separator
                     anchors.top: cardTitle.bottom
-                    anchors.topMargin: Style.Spacing.s
+                    anchors.topMargin: Style.Theme.spacing.s
                 }
                 
                 // Informations sur le thème
@@ -307,11 +307,11 @@ ApplicationWindow {
                     width: parent.width
                     text: "Mode sombre: " + (Style.Theme.isDarkTheme ? "Activé" : "Désactivé")
                     color: Style.Theme.colors.textSecondary
-                    font.family: Style.Typography.fontFamily
-                    font.pixelSize: Style.Typography.fontSizeBody
-                    font.weight: Style.Typography.fontWeightRegular
+                    font.family: Style.Theme.typography.fontFamily
+                    font.pixelSize: Style.Theme.typography.fontSizeBody
+                    font.weight: Style.Theme.typography.fontWeightRegular
                     anchors.top: separator2.bottom
-                    anchors.topMargin: Style.Spacing.s
+                    anchors.topMargin: Style.Theme.spacing.s
                 }
                 
                 Text {
@@ -319,33 +319,33 @@ ApplicationWindow {
                     width: parent.width
                     text: "Suivi système: " + (Style.Theme.followSystemTheme ? "Activé" : "Désactivé")
                     color: Style.Theme.colors.textSecondary
-                    font.family: Style.Typography.fontFamily
-                    font.pixelSize: Style.Typography.fontSizeBody
-                    font.weight: Style.Typography.fontWeightRegular
+                    font.family: Style.Theme.typography.fontFamily
+                    font.pixelSize: Style.Theme.typography.fontSizeBody
+                    font.weight: Style.Theme.typography.fontWeightRegular
                     anchors.top: themeText.bottom
-                    anchors.topMargin: Style.Spacing.s
+                    anchors.topMargin: Style.Theme.spacing.s
                 }
                 
                 // Badge d'état
                 Rectangle {
                     id: badge
-                    width: badgeText.implicitWidth + Style.Spacing.m
-                    height: badgeText.implicitHeight + Style.Spacing.xs
-                    radius: Style.Radius.xs
+                    width: badgeText.implicitWidth + Style.Theme.spacing.m
+                    height: badgeText.implicitHeight + Style.Theme.spacing.xs
+                    radius: Style.Theme.radius.xs
                     color: Style.Theme.isDarkTheme 
                         ? Qt.rgba(Style.Theme.colors.accent.r, Style.Theme.colors.accent.g, Style.Theme.colors.accent.b, 0.2) 
                         : Qt.rgba(Style.Theme.colors.accent.r, Style.Theme.colors.accent.g, Style.Theme.colors.accent.b, 0.1)
                     anchors.top: systemThemeText.bottom
-                    anchors.topMargin: Style.Spacing.s
+                    anchors.topMargin: Style.Theme.spacing.s
                     
                     Text {
                         id: badgeText
                         anchors.centerIn: parent
                         text: "Thème actif"
                         color: Style.Theme.colors.accent
-                        font.family: Style.Typography.fontFamily
-                        font.pixelSize: Style.Typography.fontSizeSmall
-                        font.weight: Style.Typography.fontWeightMedium
+                        font.family: Style.Theme.typography.fontFamily
+                        font.pixelSize: Style.Theme.typography.fontSizeSmall
+                        font.weight: Style.Theme.typography.fontWeightMedium
                     }
                 }
             }

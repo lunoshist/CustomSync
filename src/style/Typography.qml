@@ -1,7 +1,7 @@
 // src/style/Typography.qml
 
 pragma Singleton
-import QtQuick 2.15
+import QtQuick 6.5
 
 QtObject {
     // Famille de police
@@ -42,13 +42,16 @@ QtObject {
     // Espacement entre paragraphes
     readonly property int paragraphSpacing: 20    // Espacement minimum entre paragraphes
     
-    // Fonctions d'application du style
-    // Note: Ces fonctions sont conçues pour aider en code, mais les composants
-    // devraient utiliser directement les propriétés quand possible
-    
-    // Applique les propriétés de titre h1 à un Text
+    /**
+     * Applique les propriétés de titre h1 à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applyH1Style(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applyH1Style: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeH1;
         textItem.font.weight = fontWeightLight;
@@ -56,9 +59,16 @@ QtObject {
         textItem.lineHeight = lineHeightH1;
     }
     
-    // Applique les propriétés de titre h2 à un Text
+    /**
+     * Applique les propriétés de titre h2 à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applyH2Style(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applyH2Style: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeH2;
         textItem.font.weight = fontWeightRegular;
@@ -66,9 +76,16 @@ QtObject {
         textItem.lineHeight = lineHeightH2;
     }
     
-    // Applique les propriétés de titre h3 à un Text
+    /**
+     * Applique les propriétés de titre h3 à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applyH3Style(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applyH3Style: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeH3;
         textItem.font.weight = fontWeightMedium;
@@ -76,9 +93,16 @@ QtObject {
         textItem.lineHeight = lineHeightH3;
     }
     
-    // Applique les propriétés de titre h4 à un Text
+    /**
+     * Applique les propriétés de titre h4 à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applyH4Style(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applyH4Style: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeH4;
         textItem.font.weight = fontWeightMedium;
@@ -86,9 +110,16 @@ QtObject {
         textItem.lineHeight = lineHeightH4;
     }
     
-    // Applique les propriétés de corps de texte à un Text
+    /**
+     * Applique les propriétés de corps de texte à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applyBodyStyle(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applyBodyStyle: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeBody;
         textItem.font.weight = fontWeightRegular;
@@ -96,9 +127,16 @@ QtObject {
         textItem.lineHeight = lineHeightBody;
     }
     
-    // Applique les propriétés de texte secondaire à un Text
+    /**
+     * Applique les propriétés de texte secondaire à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applySecondaryStyle(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applySecondaryStyle: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeSecondary;
         textItem.font.weight = fontWeightLight;
@@ -106,9 +144,16 @@ QtObject {
         textItem.lineHeight = lineHeightSecondary;
     }
     
-    // Applique les propriétés de petit texte à un Text
+    /**
+     * Applique les propriétés de petit texte à un Text
+     * @param {Text} textItem - L'élément Text à styliser
+     */
     function applySmallStyle(textItem) {
-        if (!textItem) return;
+        if (!textItem) {
+            console.warn("Typography.applySmallStyle: textItem est null ou undefined");
+            return;
+        }
+        
         textItem.font.family = fontFamily;
         textItem.font.pixelSize = fontSizeSmall;
         textItem.font.weight = fontWeightLight;

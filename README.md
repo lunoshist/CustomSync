@@ -60,6 +60,7 @@ CustomSync/
 │   │   ├── Typography.qml                     # Typographie
 │   │   └── qmldir                             # Registre des modules QML
 │   ├── utils/                                 # Utilitaires
+│   │   └── Settings.qml                       # Persistance des paramètres
 │   └── main.py                                # Point d'entrée Python
 ├── test-qml.sh                                # Script pour tester des fichiers QML individuellement
 ├── GUIDELINE.md                               # Direrctives à suivre absolument
@@ -145,3 +146,4 @@ Le projet à déjà connus des problèmes et des solutions, listées par le docu
 - Pour les détails de l'architecture UX : [Architecture-UX.md](Documentation/Architecture-UX.md)
 - Pour le système de design : [system-design.md](Documentation/System-design.md)
 - Pour le système de tokens : [SYSTEM_TOKENS.md](Documentation/System-token.md)
+- Pour enregistrer un paramètre de manière permanente [Module-Setting](Documentation/Module-Setting.md)
